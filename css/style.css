@@ -1,0 +1,453 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+/* 
+Extra-light 200
+Extra-light 200 italic
+Light 300
+Light 300 italic
+Regular 400
+Regular 400 italic
+Semi-bold 600
+Semi-bold 600 italic
+Bold 700
+Bold 700 italic
+Black 900
+Black 900 italic 
+*/
+/* importando uma fonte do site google fontes */
+
+
+body {
+    /* position: relative; */
+    margin: 0;
+    padding:0;
+    /* width: 100%; */
+    background-color: #3A000E;
+    font-family: "Source Sans Pro", sans-serif;
+    color: white;
+    font-size: 16px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.header{
+    position: relative;
+    height: 30vh;
+    width: 100%;
+    background-color: #A51515;
+    display: flex;
+    justify-content: center;
+}
+
+.header-banner{
+    position: absolute;
+    height: 65%; /* 65% baseado na altura do "pai" que tá com posição relative */
+    width: 100%;
+    background: url(../img/estampa.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    /*max-height: 158px;*/
+}
+.header-pages {
+    position: absolute; /*absolute siginifica que está relacionado com o position relative "pai"*/
+    height: 35%;
+    width: 100%;
+    top: 65%;
+    /* Para conseguir usar o vertcial-align logo abaixo: https://stackoverflow.com/questions/16629561/why-is-vertical-align-middle-not-working-on-my-span-or-div */
+    margin:0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 100% ;
+    grid-template-areas: "a b c d e f g";
+
+    box-sizing: border-box;
+}
+
+.a,.c,.d,.f,.g,.b1,.bqs,.bcp,.e1,.ec,.em{
+    text-align: center;
+    font-weight: 600;
+    background-color: #A51515;
+    /* https://stackoverflow.com/questions/2939914/how-do-i-vertically-align-text-in-a-div/13515693#13515693 */
+    display:inline-flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+
+    text-decoration: unset;
+    color: white;
+
+}
+
+
+.a {
+    grid-area: a;
+}
+.b {
+    grid-area: b;
+    height: 200%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 3fr;
+    grid-template-areas: "b1"
+    "b2";
+}
+
+.e {
+    grid-area: e;
+    height: 200%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 3fr;
+    grid-template-areas: "e1"
+    "e2";
+}
+.e1{
+    
+    /* visibility: hidden; */
+    grid-area: e1;
+}
+.e2{
+    visibility: hidden;
+    grid-area: e2;
+    height: 200%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 0.5fr;
+    grid-template-areas: "em"
+    "ec";
+}
+.ec {
+    /* padding:0 5% 0 5%; */
+    grid-area: ec;
+}
+.em {
+    /* padding:0 5% 0 5%; */
+    grid-area: em;
+}
+
+
+.b1{
+    grid-area: b1;
+}
+.b2{
+    visibility: hidden;
+    grid-area: b2;
+    height: 200%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 0.5fr;
+    grid-template-areas: "bqs"
+    "bcp";
+}
+
+.bqs {
+    /* padding:0 5% 0 5%; */
+    grid-area: bqs;
+}
+
+.bcp {
+    /* padding:0 5% 0 5%; */
+    grid-area: bcp;
+}
+.c {
+    grid-area: c;
+}
+.d {    
+    grid-area: d;
+}
+
+.f {
+    grid-area: f;
+}
+.g {
+    grid-area:g;
+}
+    
+.b1:hover + .b2{
+    visibility: visible;
+}
+.b2:hover {
+    visibility: visible;
+}
+
+.e1:hover + .e2{
+    visibility: visible;
+}
+.e2:hover {
+    visibility: visible;
+}
+
+
+.a:active, .c:active,.f:active, .g:active,.bqs:active,.bcp:active,.ec:active,.em:active{
+    background-color: #af2424;
+    color: white;
+}
+
+.a:hover, .c:hover,.f:hover, .g:hover,.bqs:hover,.bcp:hover,.ec:hover,.em:hover{
+    background-color: #8b1414;
+    color: #CECECE;
+    transition: 0.9s;
+}
+
+.logo {
+    position: absolute;
+    top: 7%;
+    padding: 0;
+    margin: auto auto; /*Centraliza*/
+    height: 85%;
+    width: 15vw;
+
+    background-image: url(../img/logoaaamat.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+
+.container{
+    background-color:#060606;
+    margin: 0 5% 0 5%;
+    box-shadow:0 0 20px 5px black; /* h-offset v-offset blur spread color */
+    padding: 2.5%;
+    min-height: 100vh;
+    text-align: justify;
+}
+
+.footer {
+    bottom: 0vh;
+    width: 100%;
+    margin:0;
+    padding:0;
+}
+
+.general-informations {
+    display: grid;
+    box-sizing: border-box;
+    grid-template-columns: 1fr 5fr .5fr .5fr .5fr;
+    grid-template-rows: .25fr .25fr .25fr;
+    grid-template-areas: "iu aa r1 r2 r3"
+                         "iu aai r1 r2 r3"
+                         "iu d d d d"
+                         "iu l l l l";
+    
+    background-color: #E7E6E6;
+    background-image: url(../img/estampa_rotape.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    min-height: 10vh;
+    background-blend-mode: soft-light;
+    margin:0;
+    padding: 0;
+    height: fit-content;
+}
+
+.imeusp-icon{
+    background-image: url(../img/ime_usp.svg);
+    margin:0;
+    padding:0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: #CECECE;
+    height:100%; 
+    width: 100%;
+    
+    grid-area: iu;
+}
+
+.aa {
+    color: #383737;
+    font-weight: 700;
+    grid-area: aa;
+    margin: 15px 0 0 15px;
+}
+.aai {
+    color: #383737;
+    font-weight: 600;
+    grid-area: aai;
+    margin: 0px 0 5px 15px;
+}
+
+
+
+.divider {
+    height:1px;
+    width:98% ;
+    border-width:0;
+    color: #383737;
+    background-color: #383737;; 
+    opacity: 50%;
+    grid-area:d;
+    margin-bottom: 0;
+    margin-top: 0;
+    
+}
+
+.localization {
+    /* background-color: royalblue; */
+    grid-area:l;
+    font-size: 14px;
+    color: #383737;
+    margin: 0px 0 0px 15px;
+}
+
+.insta-icon{
+    border-radius: 50%;
+    height: 47px;
+    width: 47px;
+    grid-area: r1;
+    margin: 15px 0px 10px 0;
+    /* background: #f09433; 
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 ); */
+    background-image: url(../img/instagram.svg);
+    background-size: cover;
+}
+.face-icon{
+    /* background-color: #4267B2; */
+    border-radius: 50%;
+    height: 47px;
+    width: 47px;
+    grid-area: r2;
+    margin: 15px 0px 10px 0px;
+    background-image: url(../img/facebook.svg);
+    background-size: cover;
+    align-content: center;
+}
+.linkedin-icon{
+    /* background-color: #0e76a8; */
+    border-radius: 50%;
+    height: 47px;
+    width: 47px;
+    grid-area: r3;
+    margin: 15px 0px 10px 0px;
+    background-image: url(../img/linkedin.svg);
+    background-size: cover;
+}
+
+.copyright {
+    position: static;
+    display: table-cell;
+    padding:0;
+    margin: 0;
+    background-color: #0D0D0D;
+    font-weight: 700;
+    font-size: 14px;
+    width: 100vw;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp */
+/* width */
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+
+
+
+/* @media (max-width: 800px) {
+    .insta-icon, .face-icon, .linkedin-icon{
+        height: 37px;
+        width: 37px;
+    }
+    .header{
+        height: 20vh;
+    }
+    .header-banner{
+        display:none;
+    }
+    .header-pages{
+        top:0;
+        height:100%;
+    }
+}     */
+@media (max-width: 650px){
+    body{
+        margin: 0px;
+        padding: 0;
+        /* background-color: yellowgreen; */
+        font-size: 15px;
+    }
+    .header{
+        height: 15vh;
+    }
+    .header-pages{
+        visibility: hidden;
+    }
+    .header-banner{
+        background-image: url(../img/estampa.png);
+        height: 75%;
+        background-size: cover;
+        border-bottom: 15px #A51515 solid;
+    }
+    .logo{
+        height: 100%;
+        top:0;
+    }
+    .copyright {
+        font-size: 12px;
+    }
+    .general-informations{
+        grid-template-columns: 5fr .5fr .5fr .5fr;
+        grid-template-rows: .25fr .25fr .25fr;
+        grid-template-areas: "aa r1 r2 r3"
+                             "aai r1 r2 r3"
+                             "d d d d"
+                             "l l l l";
+    }
+
+    .insta-icon, .face-icon, .linkedin-icon{
+        height: 30px;
+        width: 30px;
+    }
+    
+}
+@media (max-height: 280px){
+    body{
+        margin: 0px;
+        padding: 0;
+        /* background-color: yellowgreen; */
+        font-size: 15px;
+    }
+    .header{
+        height: 15vh;
+    }
+    .header-pages{
+        visibility: hidden;
+    }
+    .header-banner{
+        background-image: url(../img/estampa.png);
+        height: 75%;
+        background-size: cover;
+        border-bottom: 15px #A51515 solid;
+    }
+    .logo{
+        height: 100%;
+        top:0;
+    }
+    .copyright {
+        font-size: 12px;
+    }
+    
+    .general-informations{
+        grid-template-columns: 2fr 5fr .5fr .5fr .5fr;
+        grid-template-rows: .25fr .25fr .25fr;
+        grid-template-areas: "iu aa r1 r2 r3"
+                             "iu aai r1 r2 r3"
+                             "iu d d d d"
+                             "iu l l l l";
+    }
+
+    .insta-icon, .face-icon, .linkedin-icon{
+        height: 30px;
+        width: 30px;
+    }
+    
+}
