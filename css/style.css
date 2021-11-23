@@ -373,7 +373,7 @@ body {
         margin: 0px;
         padding: 0;
         /* background-color: yellowgreen; */
-        font-size: 15px;
+        font-size: 14px;
     }
     .header{
         height: 15vh;
@@ -409,12 +409,12 @@ body {
     }
     
 }
-@media (max-height: 280px){
+@media (max-height: 250px){
     body{
         margin: 0px;
         padding: 0;
         /* background-color: yellowgreen; */
-        font-size: 15px;
+        font-size: 14px;
     }
     .header{
         height: 15vh;
