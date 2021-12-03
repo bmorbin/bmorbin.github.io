@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="shortcut icon" type="image/ico" href="./img/favicon.ico" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+
+<!-- https://tutorialdeep.com/knowhow/show-hide-div-on-scroll-jquery/ -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 75) {
+            $('.logo_aaamat').fadeOut();
+            document.getElementById("home_header").style.color = "white";
+        }
+        else {
+            $('.logo_aaamat').fadeIn();
+            document.getElementById("home_header").style.color = "#A51515";
+        }
+    });
+</script>
+
+<body>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <div style="background-color: #3A000E;">
+
+        <!-- CABEÇALHO -->
+        <header>
+            <img class="logo_aaamat" src="./img/logoaaamat.svg" alt="Logo AAAMAT" title="Home">
+            <a class="logo_aaamat" href=./home.html alt="Logo AAAMAT" title="Home"></a>
+            <div class='z'></div>
+            <div class='a'>
+                <a href="./historia.html">História</a>
+                <div id="gestao_toggle" style="background-color: #A51515">
+                    <p id="gestao_header" style="cursor: default;">Gestão
+                        &#9662;</p>
+                    <a id="quem_somos_header" href="./quem_somos.html">Quem
+                        somos</a>
+                    <a id="como_participar_header" href="./como_participar.html">
+                        Como participar</a>
+                </div>
+                <a href="./lojinha.html">Lojinha</a>
+                <a href="./home.html" id="home_header" style="color: #A51515;">Home</a>
+                <div id="esportivo_toggle" style="background-color: #A51515">
+                    <p id="esportivo_header" style="cursor: default;">Esportivo
+                        &#9662;</p>
+                    <a href="./modalidades.html" id="modalidades_header">Modalidades</a>
+                    <a href="./campeonatos.html" id="campeonatos_header">
+                        Campeonatos</a>
+                </div>
+                <a href="./eventos.html">Eventos</a>
+                <a href="./contatos.html">Contato</a>
+            </div>
+
+
+        </header>
+
+
+
+        <!-- AQUI FICARÁ O CONTEÚDO DA PÁGINA -->
+        <div class='b'>
+            <div>
+                <img src="./img/banner_loja_cheers.svg" alt="" style="width: 100%;">
+            </div>
+
+            <link rel="stylesheet" type="text/css" href="./css/carousel_lojinha.css">
+            <div class="carousel-container">
+
+                <div id="carousel">
+
+                    <div class="hideLeft">
+                        <img src="./img/CAMISETA.png">
+                    </div>
+
+                    <div class="prevLeftSecond">
+                        <img src="./img/moletons.png">
+                    </div>
+
+                    <div class="prev">
+                        <img src="./img/corta-vento-cheers1.png">
+                    </div>
+
+                    <div class="selected">
+                        <img src="./img/foto_corta_laura_bruno.png">
+                    </div>
+
+                    <div class="next">
+                        <img src="./img/MOLETA_BRANCO.png">
+                    </div>
+
+                    <div class="nextRightSecond">
+                        <img src="./img/corta.png">
+                    </div>
+
+                    <div class="hideRight">
+                        <img src="./img/meia_cheers.png">
+                    </div>
+
+                </div>
+                <div class="buttons">
+                    <button id="prev" style="transform: rotate(90deg);"></button>
+                    <button id="next" style="transform: rotate(-90deg);"></button>
+                </div>
+
+            </div>
+            <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+            <script src="./js/carousel_lojinha.js"></script>
+
+            <div id="cheersshop_link" style="width: 100%; background-color: #A51515;padding: 20px 0 20px 0;">
+                <a href="https://www.cheersshop.com.br/aaamat.imeusp" target="_blank">
+                    <h6 style="font-weight: 900; font-style: italic; text-align: center;">
+                        &#128073; www.cheersshop.com.br/aaamat.imeusp &#128072;
+                    </h6>
+                </a>
+            </div>
+
+            <div class="container">
+                <h1 style="font-weight: bold;text-align: center;font-variant: small-caps; margin-top:15px">LOJINHA DA
+                    ATLÉTICA</h1>
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit placeat suscipit minus corrupti debitis
+                tempore incidunt molestias nostrum, possimus repellendus voluptas sapiente labore, quibusdam inventore
+                natus facilis! Labore, voluptatum beatae?
+                Beatae animi eveniet accusamus, aspernatur nisi eligendi nobis obcaecati voluptatum soluta et atque eius
+                quam quibusdam numquam autem cumque minima ullam! Facilis, dignissimos tempora? Asperiores, fuga?
+                Aperiam blanditiis natus nisi.
+                Blanditiis adipisci placeat, beatae corrupti ipsa minima commodi, quos repellat perferendis voluptatum,
+                nulla quod facilis consectetur inventore natus hic amet veniam? Nobis, nulla iste soluta voluptatibus
+                beatae esse illum sunt.
+                Ea aperiam esse perferendis ducimus ut, repellat non dolore, aliquid ab quae cupiditate molestiae ex
+                nemo, facere amet explicabo. Velit aperiam dolorem dolore magnam necessitatibus iste placeat eum
+                sapiente sequi.
+                Laborum veniam ullam doloribus atque perferendis provident dolores excepturi labore tempore sapiente
+                pariatur aliquam eos, explicabo, officiis modi suscipit ipsa culpa, adipisci ratione dolor omnis? Nisi
+                asperiores dolor amet blanditiis!
+                Est illum eveniet cumque. Nobis asperiores commodi nisi minus doloribus ea. Perferendis impedit expedita
+                hic ab repellendus veritatis nesciunt vitae incidunt porro placeat ratione commodi error, praesentium
+                eaque enim ullam!
+                Provident, molestiae. Commodi fugiat reiciendis corrupti aut nobis! Iure quam tempora deserunt
+                recusandae temporibus dignissimos voluptates laudantium accusantium explicabo! Illo minima vel alias
+                sunt cumque mollitia maxime, temporibus veniam laudantium!
+                Itaque nemo aliquam nulla minima debitis pariatur natus quod nobis, sed accusamus repellendus eius eos
+                excepturi. Necessitatibus ut vero molestiae nulla voluptate esse, omnis nam illum amet beatae assumenda
+                illo!
+                Dolor delectus inventore fugiat aliquid, pariatur voluptates quasi. Consequatur amet nisi dolor mollitia
+                commodi ad cupiditate illum voluptatum excepturi, hic nesciunt dolorum praesentium rem! Iure labore ea
+                amet doloribus asperiores!
+                Eum delectus natus quia, reprehenderit odio maiores, quod quae corporis dolore molestiae praesentium
+                ipsam ad vero id voluptates quos eligendi. Laudantium pariatur nulla, itaque unde laboriosam sunt
+                perferendis iste consectetur.
+            </div>
+
+        </div>
+
+
+
+        <!-- RODAPÉ -->
+        <footer>
+            <div id="general_infos">
+                <div id="logo-imeusp">
+                    <a href="https://www.ime.usp.br/" target="_blank" title="IME-USP Home" alt="IME-USP Logo">
+                        <img src="./img/ime_usp.svg" style="height: 90px;">
+                    </a>
+                </div>
+
+                <div id="nome_localizacao"
+                    style="max-height: 90px;overflow-x: scroll; padding: 5px 5px 5px 10px;flex-grow: 2;white-space: nowrap;">
+                    <p style="font-weight:700; background-color: transparent;color: #0a0a0a;margin: 5px 0 4px 0; font: size 14px;text-align: left;line-height: 15px;
+                        ">
+                        Associação
+                        Atlética
+                        Acadêmica da
+                        Matemática (AAAMAT)</p>
+                    <p
+                        style="font-weight:600; background-color: transparent;color: #0a0a0a; font: size 14px; line-height: 15px;text-align: left;margin-bottom: 10px;">
+                        Instituto
+                        de
+                        Matemática e
+                        Estatística - USP</p>
+                    <hr
+                        style="height:2px;width:100% ;border-width:0;color:rgb(61, 61, 61);background-color:rgb(61, 61, 61); opacity: 10%;margin: 0 0 2px 0;">
+
+                    <div
+                        style="background-color: transparent;display:inline-flex;justify-content: center;vertical-align: middle;font-size: 13px;white-space: nowrap;">
+
+                        <div
+                            style="background-color: transparent;justify-content: center;vertical-align: middle;font-size: 13px;white-space: nowrap;">
+
+                            <img src="./img/geo-alt.svg"
+                                style="background-color: transparent;height: 14px;width: 14px;margin: 0px 2px 0 0;">
+                            <p
+                                style="display: inline-block;font-weight: 400; margin: 2px 2px 0 0; background-color: transparent; color: #0a0a0a;">
+                                Localização: </p>
+                            <p
+                                style="display: inline-block;font-weight: 300; margin: 2px 0 0 0; background-color: transparent; color: #0a0a0a">
+                                Rua do Matão, 1010 — Butantã, São
+                                Paulo
+                                - SP, 05508-120</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="redes-sociais"
+                    style="display: flex; flex-direction: row; justify-content: space-between;padding: 0px;">
+                    <a href="https://www.instagram.com/aaamat_imeusp/" target="_blank"
+                        style="background-color: transparent;">
+                        <img id="insta_logo" src="./img/instagram.svg"
+                            style="height: 35px;margin: 15px 5px 5px 5px;background-color: transparent;">
+                    </a>
+                    <a href="https://www.facebook.com/aaamat.ime/" target="_blank"
+                        style="background-color: transparent;">
+                        <img id="face_logo" src="./img/facebook.svg"
+                            style="height: 35px;margin: 15px 5px 5px 5px;background-color: transparent;">
+                    </a>
+                    <a href="https://www.linkedin.com/company/aaamatimeusp/" target="_blank"
+                        style="background-color: transparent;">
+                        <img id="linkedin_logo" src="./img/linkedin.svg"
+                            style="height: 35px;margin: 15px 10px 5px 5px;background-color: transparent;">
+                    </a>
+                </div>
+            </div>
+
+            <div class='c' style="font-size: 12px;">
+                &copy;
+                <script type="text/javascript">document.write(new Date().getFullYear());</script> Atlética
+                Matemática
+                USP
+            </div>
+            <div class="c" style="margin: 0;padding: 0;">
+
+                <hr
+                    style="height:0.5px;width:100% ;border-width:0;color:rgb(61, 61, 61);background-color:rgb(61, 61, 61); opacity: 10%;margin: 0;">
+                <p
+                    style="box-shadow:0 0 5px 2px #0a0a0a;background-color: #0c0c0c;font-weight: 300 italic; color: rgb(61, 61, 61); text-align: right; padding-right: 0.5%; font-size: 8px; margin:0;opacity: 30%">
+                    Site e Design criados por Bruno Groper Morbin & Luiz Carlos</p>
+            </div>
+
+        </footer>
+    </div>
+</body>
+
+</html>
