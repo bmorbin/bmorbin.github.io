@@ -216,4 +216,26 @@
     
   }
 
+  
+  .nav-link{
+    text-align: right;
+    font-weight: 600;
+    font-size: 17px;
+  }
+
+  .nav-item:hover{
+    background-color: #7e0505;
+  }
+  
+  .dropdown-divider{
+    background-color: #750303;
+  }
+  
+  .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .show>.nav-link {
+    padding-right: 20px;
+  }
+
+  .navbar-nav.justify-content-end.flex-grow-1.pe-3 {
+    padding-right: 0rem!important;
+  }
 
