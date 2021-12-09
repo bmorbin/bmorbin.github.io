@@ -194,7 +194,12 @@
   .navbar-nav.justify-content-end.flex-grow-1.pe-3 {
     padding-right: 0rem!important;
   }
-  
+
+  #imagens_pag_historia{
+    max-width: 250px;
+    
+  }
+
   @media (max-width: 670px){
     #general_infos{
       flex-direction: column;
@@ -204,7 +209,7 @@
     #logo-imeusp{
       display: none;
     }
-
+    
     #redes-sociais{
       justify-content: center;
       align-items: center;
@@ -213,11 +218,11 @@
       margin-bottom: 10px;
       
     }
-
+    
     #localizacao_rodape{
       display: none;
     }
-
+    
     .z{
       background-size: auto 50px;
       height: 50px;
@@ -241,4 +246,8 @@
     #fluffy_icon_home_linked_pages{
       display: none;
     }
+    #imagens_pag_historia{
+      max-width: 95%;
+    }
   }
+  
