@@ -1,0 +1,517 @@
+<!-- https://www.udemy.com/course/sheet-as-json/learn/lecture/24085066#overview -->
+<!-- https://www.youtube.com/watch?v=1W35ITPUp6Y -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="shortcut icon" type="image/ico" href="./img/favicon.ico" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>AAAMAT</title>
+</head>
+
+<!-- https://tutorialdeep.com/knowhow/show-hide-div-on-scroll-jquery/ -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    $(window).scroll(function () {
+        if ($(this).width() > 670) {
+            if ($(this).scrollTop() > 75) {
+                $('.logo_aaamat').fadeOut();
+                document.getElementById("home_header").style.color = "white";
+            }
+            else {
+                $('.logo_aaamat').fadeIn();
+                document.getElementById("home_header").style.color = "#A51515";
+            }
+        }
+        else {
+            if ($(this).scrollTop() > 50) {
+                $('.logo_aaamat').fadeOut();
+                document.getElementById("logo_aaamat_navbar").style.visibility = "visible";
+            }
+            else {
+                $('.logo_aaamat').fadeIn();
+                document.getElementById("logo_aaamat_navbar").style.visibility = "hidden";
+            }
+        }
+
+
+    });
+</script>
+
+
+
+<body>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <div style="background-color: #3A000E;">
+
+        <!-- CABEÇALHO -->
+        <header>
+            <img class="logo_aaamat" src="./img/logoaaamat.svg" alt="Logo AAAMAT" title="Home">
+            <a class="logo_aaamat" href=./home.html alt="Logo AAAMAT" title="Home"></a>
+            <div class='z'></div>
+            <div class='a'>
+                <a href="./historia.html">História</a>
+                <div id="gestao_toggle" style="background-color: #A51515">
+                    <p id="gestao_header" style="cursor: default;">Gestão
+                        &#9662;</p>
+                    <a id="quem_somos_header" href="./quem_somos.html">Quem
+                        somos</a>
+                    <a id="como_participar_header" href="./como_participar.html">
+                        Faça parte</a>
+                </div>
+                <a href="./lojinha.html">Lojinha</a>
+                <a href="./home.html" id="home_header" style="color: #A51515;">Home</a>
+                <div id="esportivo_toggle" style="background-color: #A51515">
+                    <p id="esportivo_header" style="cursor: default;">Esportivo
+                        &#9662;</p>
+                    <a href="./modalidades.html" id="modalidades_header">Modalidades</a>
+                    <a href="./campeonatos.html" id="campeonatos_header">
+                        Campeonatos</a>
+                </div>
+                <a href="./eventos.html">Eventos</a>
+                <a href="./contatos.html">Contato</a>
+            </div>
+
+            <div class="a_responsivo">
+                <nav class="navbar navbar-dark " style="padding:0;margin:0;position: unset;width: 100%;">
+                    <div class="container-fluid">
+                        <a id="logo_aaamat_navbar" class="navbar-brand" href=./home.html>
+                            <img src="./img/logoaaamat.svg" alt="Logo AAAMAT" title="Home"
+                                style="height: 40px;width: 40px;">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                            aria-labelledby="offcanvasNavbarLabel"
+                            style="background-color: #A51515;border-left: none;width: 300px;">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasNavbarLabel"
+                                    style="text-align: center;font-weight: 900;font-size: xx-large;color: #8b0606;">
+                                    AAAMAT</h5>
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href=./home.html>Home</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href=./historia.html>História</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown"
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Gestão
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown"
+                                            style="background-color: #A51515">
+                                            <li><a class="nav-link active" href=./quem_somos.html>Quem
+                                                    somos</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a class="nav-link active" href=./como_participar.html>Faça
+                                                    parte</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+
+
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href=./lojinha.html>Lojinha</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+
+                                    <li class="nav-item dropdown center">
+                                        <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown"
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Esportivo
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown"
+                                            style="background-color: #A51515">
+                                            <li><a class="nav-link active" href=./modalidades.html>Modalidades</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a class="nav-link active" href=./campeonatos.html>Campeonatos</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href=./eventos.html>Eventos</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href=./contato.html>Contato</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+
+        </header>
+
+
+
+        <!-- AQUI FICARÁ O CONTEÚDO DA PÁGINA -->
+        <div class='b' style="display: flex;flex-direction:column; ">
+
+
+            <div class="carrossel_home" style="margin-top: 0px;">
+
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="10000">
+                            <img src="./img/bandeirao.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="5000">
+                            <img src="./img/imeanes2_foto.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="5000">
+                            <img src="./img/fachada_imeusp.png" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <div class="container">
+
+                <h1 style="font-weight: bold;text-align: center;font-variant: small-caps; margin-top:15px">O QUE É
+                    A AAAMAT?</h1>
+                <p style="margin-top: 15px;">A Atlética é uma instituição gerenciada pelos
+                    alunos
+                    do
+                    IME USP
+                    responsável pela organização de
+                    todas as modalidades esportivas, campeonatos dentro e fora da universidade, além da realização
+                    de festas e eventos de integração.
+                </p>
+
+                <hr
+                    style="height:2px;width:100% ;border-width:0;color:rgb(29, 29, 29);background-color:rgb(29, 29, 29); opacity: 70%;margin: 30px 0 0 0;">
+
+                <h3 style="font-weight: bold;text-align: center;font-variant: small-caps; margin-top:30px">CONHEÇA MAIS
+                    SOBRE NÓS:</h3>
+
+                <div style="display:flex; flex-direction: column;margin-top: 30px;">
+                    <div id="page_container"
+                        style="background-color: #680618;margin-bottom:15px ;margin-left: 0;display: flex;flex-direction: row;border-radius: 10px;">
+                        <img src="./img/fluffy_silhueta.svg" id="fluffy_icon_home_linked_pages"
+                            style="padding:15px;background-size:contain;width: 100px;border-radius: 10px 0 0 10px;background-color: #680618;">
+                        <div style="overflow-y: scroll;padding:10px; width: 100%;">
+                            <div class="container"
+                                style="font-weight: 700;font-variant: small-caps;line-height: 26.6px;padding:0 0 0 5px;text-align: center;">
+                                &bull;HISTÓRIA DA AAAMAT
+                            </div>
+                            <div
+                                style="font-style:italic ; line-height: 22px;padding:0 0 0 5px;text-overflow: ellipsis;text-align: center;">
+                                Toda história da fundação da atlética: ano em que foi fundada, quem foram os fundadores,
+                                primeiras arrecadações e campeonatos, ...
+                            </div>
+                            <div style="margin-right: 0;float: right; bottom:0; margin:0">
+                                <a class="btn btn-secondary btn-sm" href="./historia.html"
+                                    style="background-color: red;border-color:red;height: 24px;line-height: 20px;padding: 0 15px 0 15px;border-radius: 5px;margin:0">Ver
+                                    mais</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="page_container"
+                        style="background-color: #A51515;margin-bottom:15px ;margin-left: 0;display: flex;flex-direction: row;border-radius: 10px;">
+                        <img src="./img/fluffy_silhueta.svg" id="fluffy_icon_home_linked_pages"
+                            style="padding:15px;background-size:contain;width: 100px;border-radius: 10px 0 0 10px;background-color: #A51515;">
+                        <div style="overflow-y: scroll;padding:10px; width: 100%;">
+                            <div class="container"
+                                style="font-weight: 700;font-variant: small-caps;line-height: 26.6px;padding:0 0 0 5px;text-align: center;">
+                                &bull;GESTÕES DE CADA ANO
+                            </div>
+                            <div
+                                style="font-style:italic ; line-height: 22px;padding:0 0 0 5px;text-overflow: ellipsis;text-align: center;">
+                                Confira algumas das gestões que fizeram parte, além da atual gestão
+                            </div>
+                            <div style="margin-right: 0;float: right; bottom:0; margin:0">
+                                <a class="btn btn-secondary btn-sm" href="./quem_somos.html"
+                                    style="background-color: red;border-color:red;height: 24px;line-height: 20px;padding: 0 15px 0 15px;border-radius: 5px;margin:0">Ver
+                                    mais</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="page_container"
+                        style="background-color: #680618;margin-bottom:15px ;margin-left: 0;display: flex;flex-direction: row;border-radius: 10px;">
+                        <img src="./img/fluffy_silhueta.svg" id="fluffy_icon_home_linked_pages"
+                            style="padding:15px;background-size:contain;width: 100px;border-radius: 10px 0 0 10px;background-color: #680618;">
+                        <div style="overflow-y: scroll;padding:10px; width: 100%;">
+                            <div class="container"
+                                style="font-weight: 700;font-variant: small-caps;line-height: 26.6px;padding:0 0 0 5px;text-align: center;">
+                                &bull;EVENTOS
+                            </div>
+                            <div
+                                style="font-style:italic ; line-height: 22px;padding:0 0 0 5px;text-overflow: ellipsis;text-align: center;">
+                                Tudo sobre os eventos que a atlética organiza, como JunIME, I Will SurvIME, dentre
+                                outros; ou que participa diretamente da organização em conjunto com outras atléticas,
+                                tais como as festas do BIFE</div>
+                            <div style="margin-right: 0;float: right; bottom:0; margin:0">
+                                <a class="btn btn-secondary btn-sm" href="./eventos.html"
+                                    style="background-color: red;border-color:red;height: 24px;line-height: 20px;padding: 0 15px 0 15px;border-radius: 5px;margin:0">Ver
+                                    mais</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="page_container"
+                        style="background-color: #A51515;margin-bottom:30px ;margin-left: 0;display: flex;flex-direction: row;border-radius: 10px;">
+                        <img src="./img/fluffy_silhueta.svg" id="fluffy_icon_home_linked_pages"
+                            style="padding:15px;background-size:contain;width: 100px;border-radius: 10px 0 0 10px;background-color: #A51515;">
+                        <div style="overflow-y: scroll;padding:10px; width: 100%;">
+                            <div class="container"
+                                style="font-weight: 700;font-variant: small-caps;line-height: 26.6px;padding:0 0 0 5px;text-align: center;">
+                                &bull;CAMPEONATOS
+                            </div>
+                            <div
+                                style="font-style:italic ; line-height: 22px;padding:0 0 0 5px;text-overflow: ellipsis;text-align: center;">
+                                Todos Campeonatos em que o IME participa, sendo entre as demais faculdades da USP ou não
+                            </div>
+                            <div style="margin-right: 0;float: right; bottom:0; margin:0">
+                                <a class="btn btn-secondary btn-sm" href="./campeonatos.html"
+                                    style="background-color: red;border-color:red;height: 24px;line-height: 20px;padding: 0 15px 0 15px;border-radius: 5px;margin:0">Ver
+                                    mais</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    style="height:1px;width:100% ;border-width:0;color:rgb(29, 29, 29);background-color:rgb(29, 29, 29); opacity: 70%;margin: 30px 0 0 0;">
+                </div>
+
+                <h4
+                    style="font-weight: 900;text-align: right;font-variant: small-caps; margin:15px 5px 0 0; color: #A51515; font-style: italic;">
+                    ÚLTIMAS ATUALIZAÇÕES&#9664;</h4>
+
+                <div id="cards_atualizacoes" class="border-light d-flex bd-highlight align-items-stretch "
+                    style="margin: 20px 0 20px 0;width:100%;height: 575px;overflow-y: scroll;">
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+    </div>
+    <!-- </div> -->
+    </div>
+
+
+
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div id="general_infos">
+            <div id="logo-imeusp">
+                <a href="https://www.ime.usp.br/" target="_blank" title="IME-USP Home" alt="IME-USP Logo">
+                    <img id="img_logo-imeusp" src="./img/ime_usp.svg" style="height: 90px;">
+                </a>
+            </div>
+
+            <div id="nome_localizacao"
+                style="max-height: 90px;overflow-x: scroll; padding: 5px 5px 5px 10px;flex-grow: 2;">
+                <p id="nome_social_aaamat" style="font-weight:700; background-color: transparent;color: #0a0a0a;margin: 5px 0 4px 0; font-size: 14px;text-align: center;line-height: 15px;
+                        ">
+                    Associação
+                    Atlética
+                    Acadêmica da
+                    Matemática (AAAMAT)</p>
+                <p id="nome_ime"
+                    style="font-weight:600; background-color: transparent;color: #0a0a0a; font-size: 14px; line-height: 15px;text-align: center;margin-bottom: 10px;">
+                    Instituto
+                    de
+                    Matemática e
+                    Estatística - USP</p>
+                <hr id="divisor_nome_localizacao"
+                    style="height:2px;width:100% ;border-width:0;color:rgb(61, 61, 61);background-color:rgb(61, 61, 61); opacity: 10%;margin: 0 0 2px 0;">
+
+                <div
+                    style="background-color: transparent;display:flex;justify-content: center;vertical-align: middle;font-size: 13px;">
+
+                    <div id="localizacao_rodape"
+                        style="background-color: transparent;justify-content: center;vertical-align: middle;font-size: 13px;">
+
+                        <img id="icon_local" src="./img/geo-alt.svg"
+                            style="background-color: transparent;height: 14px;width: 14px;margin: 0px 2px 0 0;">
+                        <p id="asaada"
+                            style="display: inline-block;font-weight: 400; margin: 2px 2px 0 0; background-color: transparent; color: #0a0a0a;">
+                            Localização: </p>
+                        <p
+                            style="display: inline-block;font-weight: 300; margin: 2px 0 0 0; background-color: transparent; color: #0a0a0a">
+                            Rua do Matão, 1010 — Butantã, São
+                            Paulo
+                            - SP, 05508-120</p>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="redes-sociais"
+                style="display: flex; flex-direction: row; justify-content: space-between;padding: 0px;">
+                <a href="https://www.instagram.com/aaamat_imeusp/" target="_blank"
+                    style="background-color: transparent;">
+                    <img id="insta_logo" src="./img/instagram.svg"
+                        style="height: 35px;margin: 15px 5px 5px 5px;background-color: transparent;">
+                </a>
+                <a href="https://www.facebook.com/aaamat.ime/" target="_blank" style="background-color: transparent;">
+                    <img id="face_logo" src="./img/facebook.svg"
+                        style="height: 35px;margin: 15px 5px 5px 5px;background-color: transparent;">
+                </a>
+                <a href="https://www.linkedin.com/company/aaamatimeusp/" target="_blank"
+                    style="background-color: transparent;">
+                    <img id="linkedin_logo" src="./img/linkedin.svg"
+                        style="height: 35px;margin: 15px 10px 5px 5px;background-color: transparent;">
+                </a>
+            </div>
+        </div>
+
+        <div class='c' style="font-size: 12px;">
+            &copy;
+            <script type="text/javascript">document.write(new Date().getFullYear());</script> Atlética
+            Matemática
+            USP
+        </div>
+        <div class="c" style="margin: 0;padding: 0;">
+            <hr
+                style="height:0.5px;width:100% ;border-width:0;color:rgb(61, 61, 61);background-color:rgb(61, 61, 61); opacity: 10%;margin: 0;">
+            <p
+                style="box-shadow:0 0 5px 2px #0a0a0a;background-color: #0c0c0c;font-weight: 300 italic; color: rgb(61, 61, 61); text-align: right; padding-right: 0.5%; font-size: 8px; margin:0;opacity: 30%">
+                Site e Design criados por Bruno Groper Morbin & Luiz Carlos</p>
+        </div>
+
+    </footer>
+    </div>
+</body>
+
+</html>
+
+
+<script src="https://unpkg.com/vue@next"></script>
+<script>
+    const url = 'https://script.google.com/macros/s/AKfycbzzSNNPkgwFaBb1OSR2VWnwTqXmoDoi9lhNfEMW1lXTmGeV6i-ngYCfJUqwO7oTqChVww/exec'
+    const output = document.querySelector('#cards_atualizacoes');
+    getData();
+
+    function imageExists(image_url) {
+
+        var http = new XMLHttpRequest();
+
+        http.open('HEAD', image_url, false);
+        http.send();
+
+        return http.status != 404;
+
+    }
+    function getData() {
+        fetch(url).then((res) => {
+            return res.json()
+        }).then((json) => {
+            // console.log(json));
+            json.data.forEach(ele => {
+                const div = document.createElement('div');
+                div.className = 'col';
+                div.innerHTML = `
+                        <div class="card text-white bg-dark mb-3 h-100">
+                            <div class="card-header ">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#6c757d"
+                                    class="bi bi-calendar3" viewBox="0 0 16 16">
+                                    <path
+                                        d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
+                                    <path
+                                        d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                                </svg>
+                                <small class="text-muted" style="font-size:12px">Publicado em ${''.concat(ele.posted.slice(8, 10), '/', ele.posted.slice(5, 7), '/', ele.posted.slice(0, 4))}</small>
+                            </div>
+                            
+
+                                <img src=${ele.imagem} class= "card-img-top" height="250px" width="250px" onerror="this.onerror=null; this.src='./img/fluffy_silhueta2.png'">
+                            
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-weight: 600">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red"
+                                    class="bi bi-pin-angle-fill" viewBox="0 0 16 16">
+                                    <path
+                                    d="M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a5.927 5.927 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707-.195-.195.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a5.922 5.922 0 0 1 1.013.16l3.134-3.133a2.772 2.772 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146z" />
+                                    </svg>
+                                    ${ele.title}
+                                    </h5>
+                                    <p class="card-text">${ele.content}</p>
+                                    </div >
+                                    
+                                <a id="a_atualizacoes" href="${ele.link}" class="btn btn-secondary" style="width:100%" target="_blank">   
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16">
+  <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/>
+  <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/>
+</svg>
+                                    Link
+                                    </a>
+                            
+                            
+                        </div >`;
+                output.append(div);
+            });
+        })
+    }
+
+</script>
