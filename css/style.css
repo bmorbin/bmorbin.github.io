@@ -160,11 +160,34 @@
   }
   
   .card {
-    width: 200px;
-    max-height: 400px;
+    width: 250px;
+    max-height: 500px;
     margin: 0 5px 5px 0px;
-    overflow-x: scroll;
+    border: 0 !important;
+  }
+  .card-body{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 150px;
+  }
+  .card-body::-webkit-scrollbar{
+    width: 3px;
+    background-color: #06060648;
+    border-radius: 1px;
+  }
+  .card-body::-webkit-scrollbar-thumb{
+    background-color: #55555557;
+    margin: 0.5px;
+  }
 
+
+  img.card-img-top{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0
+  }
+  
+  #a_atualizacoes.btn.btn-secondary{
+    border-radius: 0 0 .25em .25em;
   }
 
   #cheersshop_link > a{
