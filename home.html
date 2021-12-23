@@ -67,20 +67,20 @@
             <div class='a'>
                 <a href="./historia.html">História</a>
                 <div id="gestao_toggle" style="background-color: #A51515">
-                    <p id="gestao_header" style="cursor: default;">Gestão
+                    <p id="gestao_header" style="cursor: default;" tabindex="0">Gestão
                         &#9662;</p>
-                    <a id="quem_somos_header" href="./quem_somos.html">Quem
+                    <a id="quem_somos_header" href="./quem_somos.html" tabindex="-1">Quem
                         somos</a>
-                    <a id="como_participar_header" href="./como_participar.html">
+                    <a id="como_participar_header" href="./como_participar.html" tabindex="-1">
                         Faça parte</a>
                 </div>
                 <a href="./lojinha.html">Lojinha</a>
                 <a href="./home.html" id="home_header" style="color: #A51515;">Home</a>
                 <div id="esportivo_toggle" style="background-color: #A51515">
-                    <p id="esportivo_header" style="cursor: default;">Esportivo
+                    <p id="esportivo_header" style="cursor: default;" tabindex="0">Esportivo
                         &#9662;</p>
-                    <a href="./modalidades.html" id="modalidades_header">Modalidades</a>
-                    <a href="./campeonatos.html" id="campeonatos_header">
+                    <a href="./modalidades.html" id="modalidades_header" tabindex="-1">Modalidades</a>
+                    <a href="./campeonatos.html" id="campeonatos_header" tabindex="-1">
                         Campeonatos</a>
                 </div>
                 <a href="./eventos.html">Eventos</a>
@@ -229,10 +229,40 @@
                     </button>
                 </div>
             </div>
-            <div class="container">
+
+            <div
+                style="height:1px;width:100% ;border-width:0;color:rgb(29, 29, 29);background-color:rgb(29, 29, 29); opacity: 70%;margin: 0px 0 0 0;">
+            </div>
+
+            <div id="fundo_atualizacoes"
+                style="background-image: url(./img/aaamat_padrao.svg);padding-bottom: 30px;background-size: 200px auto;">
+                <div class="container">
+
+                    <h4 style="font-weight: 900;text-align: right;font-variant: small-caps; margin:15px 5px 0 0; color: #A51515; font-style: italic;text-shadow:-2px -2px 0 #060606,  
+                        2px -2px 0 #060606,
+                       -2px  2px 0 #060606,
+                        2px  2px 0 #060606; ">
+                        ÚLTIMAS ATUALIZAÇÕES&#9664;</h4>
+
+                    <div id="cards_atualizacoes" class="border-light d-flex bd-highlight align-items-stretch "
+                        style="margin: 20px 0 20px 0;width:100%;height: 515px;overflow-y: hidden;">
+                    </div>
+                </div>
+
+            </div>
+            <div
+                style="height:1px;width:100% ;border-width:0;color:rgb(29, 29, 29);background-color:rgb(29, 29, 29); opacity: 70%;margin: 0px 0 0 0;">
+            </div>
+
+            <div class="container" style="margin-bottom: 30px;">
 
                 <h1 style="font-weight: bold;text-align: center;font-variant: small-caps; margin-top:15px">O QUE É
                     A AAAMAT?</h1>
+
+                <div class="d-flex justify-content-center" style="margin: 5px 0 10px 0;">
+                    <div style="height:7px;background-color:#A51515;width: 150px;"></div>
+                </div>
+
                 <p style="margin-top: 15px;">A Atlética é uma instituição gerenciada pelos
                     alunos
                     do
@@ -247,6 +277,7 @@
 
                 <h3 style="font-weight: bold;text-align: center;font-variant: small-caps; margin-top:30px">CONHEÇA MAIS
                     SOBRE NÓS:</h3>
+
 
                 <div style="display:flex; flex-direction: column;margin-top: 30px;">
                     <div id="page_container"
@@ -334,17 +365,6 @@
                     </div>
                 </div>
 
-                <div
-                    style="height:1px;width:100% ;border-width:0;color:rgb(29, 29, 29);background-color:rgb(29, 29, 29); opacity: 70%;margin: 30px 0 0 0;">
-                </div>
-
-                <h4
-                    style="font-weight: 900;text-align: right;font-variant: small-caps; margin:15px 5px 0 0; color: #A51515; font-style: italic;">
-                    ÚLTIMAS ATUALIZAÇÕES&#9664;</h4>
-
-                <div id="cards_atualizacoes" class="border-light d-flex bd-highlight align-items-stretch "
-                    style="margin: 20px 0 20px 0;width:100%;height: 575px;overflow-y: scroll;">
-                </div>
 
             </div>
 
@@ -449,7 +469,7 @@
 
 <script src="https://unpkg.com/vue@next"></script>
 <script>
-    const url = 'https://script.google.com/macros/s/AKfycbzzSNNPkgwFaBb1OSR2VWnwTqXmoDoi9lhNfEMW1lXTmGeV6i-ngYCfJUqwO7oTqChVww/exec'
+    const url = 'https://script.google.com/macros/s/AKfycbxGYo4rF9hYh8KIydJ0VCeVnZWfHtKbuGFsiHG6G6BK3EZGhbfIIU_27EUCz4qCC4lTnA/exec'
     const output = document.querySelector('#cards_atualizacoes');
     getData();
 
@@ -488,7 +508,7 @@
                                 <img src=${ele.imagem} class= "card-img-top" height="250px" width="250px" onerror="this.onerror=null; this.src='./img/fluffy_silhueta2.png'">
                             
                             <div class="card-body">
-                                <h5 class="card-title" style="font-weight: 600">
+                                <h5 class="card-title" style="font-weight: 600; text-shadow: 1px 1px 2px black">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red"
                                     class="bi bi-pin-angle-fill" viewBox="0 0 16 16">
                                     <path

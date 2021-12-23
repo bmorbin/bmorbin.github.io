@@ -51,6 +51,7 @@
     display: flex;
     justify-content: space-between;
     background-color: #A51515;
+    box-shadow: 0 2px 4px -0px #30000080;
   }
   
   .a > *{
@@ -73,6 +74,7 @@
     height: 50px;
     width: 100%;
     margin: 0;
+    box-shadow: 0 2px 4px -0px #30000080;
   }
 
   #logo_aaamat_navbar{
@@ -162,7 +164,7 @@
   .card {
     width: 250px!important;
     max-height: 500px!important;
-    margin: 0 5px 5px 0px !important;
+    margin: 0 15px 15px 0px !important;
     border: 0 !important;
   }
   .card-body{
@@ -193,8 +195,19 @@
   #cheersshop_link > a{
     text-decoration: none;
   }
-  
-  
+
+   
+  #cards_atualizacoes::-webkit-scrollbar{
+    height: 10px;
+    background-color: rgb(33,37,41)!important;
+    border-radius: 10px!important;
+
+  }
+  #cards_atualizacoes::-webkit-scrollbar-thumb{
+    background-color: #66666660!important;
+    border-radius: 10px!important;
+    border: 2px solid rgb(33,37,41)!important;
+  }
   
   .nav-link{
     text-align: right;
@@ -218,10 +231,6 @@
     padding-right: 0rem!important;
   }
 
-  #imagens_pag_historia{
-    max-width: 250px;
-    
-  }
 
   @media (max-width: 670px){
     #general_infos{
@@ -265,12 +274,25 @@
     .a_responsivo{
       display:flex;
     }
+
+    .b{
+      box-shadow:0 0 10px 2.5px black; /* h-offset v-offset blur spread color */
+    }
     
     #fluffy_icon_home_linked_pages{
       display: none;
     }
     #imagens_pag_historia{
-      max-width: 95%;
+      float: unset!important;   
+      margin: 10px 0 25px 0!important;
+      display: flex!important;
+    
+    }
+    #fundo_atualizacoes{
+      background-size: 170px auto!important;
+    }
+    #link_cheers_lojinha {
+      font-size: .8rem!important;
     }
   }
   

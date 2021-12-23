@@ -60,20 +60,20 @@
             <div class='a'>
                 <a href="./historia.html">História</a>
                 <div id="gestao_toggle" style="background-color: #A51515">
-                    <p id="gestao_header" style="cursor: default;">Gestão
+                    <p id="gestao_header" style="cursor: default;" tabindex="0">Gestão
                         &#9662;</p>
-                    <a id="quem_somos_header" href="./quem_somos.html">Quem
+                    <a id="quem_somos_header" href="./quem_somos.html" tabindex="-1">Quem
                         somos</a>
-                    <a id="como_participar_header" href="./como_participar.html">
+                    <a id="como_participar_header" href="./como_participar.html" tabindex="-1">
                         Faça parte</a>
                 </div>
                 <a href="./lojinha.html">Lojinha</a>
                 <a href="./home.html" id="home_header" style="color: #A51515;">Home</a>
                 <div id="esportivo_toggle" style="background-color: #A51515">
-                    <p id="esportivo_header" style="cursor: default;">Esportivo
+                    <p id="esportivo_header" style="cursor: default;" tabindex="0">Esportivo
                         &#9662;</p>
-                    <a href="./modalidades.html" id="modalidades_header">Modalidades</a>
-                    <a href="./campeonatos.html" id="campeonatos_header">
+                    <a href="./modalidades.html" id="modalidades_header" tabindex="-1">Modalidades</a>
+                    <a href="./campeonatos.html" id="campeonatos_header" tabindex="-1">
                         Campeonatos</a>
                 </div>
                 <a href="./eventos.html">Eventos</a>
@@ -194,57 +194,31 @@
 
         <!-- AQUI FICARÁ O CONTEÚDO DA PÁGINA -->
         <div class='b'>
-            <div style="background-color: #EAEAEA;width: 100%;">
-                <img class="container" src="./img/banner_loja_cheers.svg" alt=""
+            <div style="background-color: #EAEAEA;width: 100%;padding: 0 10vw 0 10vw;">
+                <img src="./img/banner_loja_cheers.svg" alt=""
                     style="width: 100%; padding-top: 15px; padding-bottom: 15px;display: flex; justify-content: center;">
             </div>
 
-            <link rel="stylesheet" type="text/css" href="./css/carousel_lojinha.css">
-            <div class="carousel-container">
 
-                <div id="carousel">
-
-                    <div class="hideLeft">
-                        <img src="./img/CAMISETA.png">
+            <link rel="stylesheet" type="text/css" href="./css/style_carouselvue_lojinha.css">
+            <div id="app">
+                <carousel>
+                    <!-- Numbers 1-10 in divs -->
+                    <div v-for="image in imgs_artigos">
+                        <img src={{image}} :src="image" style="width: 100%;vertical-align: unset;">
                     </div>
-
-                    <div class="prevLeftSecond">
-                        <img src="./img/moletons.png">
-                    </div>
-
-                    <div class="prev">
-                        <img src="./img/corta-vento-cheers1.png">
-                    </div>
-
-                    <div class="selected">
-                        <img src="./img/foto_corta_laura_bruno.png">
-                    </div>
-
-                    <div class="next">
-                        <img src="./img/MOLETA_BRANCO.png">
-                    </div>
-
-                    <div class="nextRightSecond">
-                        <img src="./img/corta.png">
-                    </div>
-
-                    <div class="hideRight">
-                        <img src="./img/meia_cheers.png">
-                    </div>
-
-                </div>
-                <div class="buttons">
-                    <button class="button_personalizado" id="prev" style="transform: rotate(90deg);"></button>
-                    <button class="button_personalizado" id="next" style="transform: rotate(-90deg);"></button>
-                </div>
-
+                </carousel>
             </div>
-            <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-            <script src="./js/carousel_lojinha.js"></script>
+            <!-- partial -->
+            <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js'></script>
+            <script src="./js/script_carouselvue_lojinha.js"></script>
+
+
 
             <div id="cheersshop_link" style="width: 100%; background-color: #A51515;padding: 20px 0 20px 0;">
                 <a href="https://www.cheersshop.com.br/aaamat.imeusp" target="_blank">
-                    <h6 style="font-weight: 900; font-style: italic; text-align: center;">
+                    <h6 id="link_cheers_lojinha"
+                        style="font-weight: 800; font-style: italic; text-align: center;word-wrap: break-word;font-size: 1.1rem;">
                         &#128073;www.cheersshop.com.br/aaamat.imeusp&#128072;
                     </h6>
                 </a>
@@ -254,6 +228,9 @@
             <h1 class="container"
                 style="font-weight: bold;text-align: center;font-variant: small-caps; margin-top:15px">LOJINHA DA
                 ATLÉTICA</h1>
+            <div class="d-flex justify-content-center" style="margin: 5px 0 10px 0;">
+                <div style="height:7px;background-color:#A51515;width: 150px;"></div>
+            </div>
             <p class="container">
                 Na lojinha da AAAMAT, vendemos todos produtos com a temática do instituto e da atlética e usamos o
                 dinheiro vindo das vendas para auxiliar as equipes, ajudar nos gastos dos eventos promovidos pela
@@ -262,10 +239,10 @@
             <p class="container">
                 As vendas ocorrem por encomendas ou por estoque, sendo que as peças mais custosas, como os moletons
                 por exemplo, são geralmente vendidas apenas sob encomendas. Os produtos oferecidos em cada ano varia
-                muito de gestão a gestão, porém já vendemos camisetas, sambas e dolls, moletons, corta-ventos,
-                meias, calças moletons, dentre outros pordutos.
+                muito de gestão a gestão, porém é comum vendermos camisetas, sambas e dolls, moletons, corta-ventos,
+                meias, calças moletons, dentre outros produtos.
             </p>
-            <p class="container" style="margin-bottom: 0;padding-bottom: 30px;">
+            <p class="container" style="margin-bottom: 0;padding-bottom: 70px;">
                 O período de vendas varia de ano para ano, mas ocorre geralmente nos primeiros meses de cada
                 semestre e próximos a datas dos eventos que a atlética promove. Para a divulgação da abertura das
                 vendas, costumamos utilizar nossas redes sociais, como instagram e facebook, e assim que as vendas
@@ -274,6 +251,8 @@
                 online algumas vezes. Nesse último caso, a plataforma que usamos para vendas online é a Cheershop, e
                 você pode acessar nossa página clicando no link do card vermelho logo acima.
             </p>
+
+
 
 
 

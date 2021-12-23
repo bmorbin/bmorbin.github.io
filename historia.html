@@ -63,20 +63,20 @@
             <div class='a'>
                 <a href="./historia.html">História</a>
                 <div id="gestao_toggle" style="background-color: #A51515">
-                    <p id="gestao_header" style="cursor: default;">Gestão
+                    <p id="gestao_header" style="cursor: default;" tabindex="0">Gestão
                         &#9662;</p>
-                    <a id="quem_somos_header" href="./quem_somos.html">Quem
+                    <a id="quem_somos_header" href="./quem_somos.html" tabindex="-1">Quem
                         somos</a>
-                    <a id="como_participar_header" href="./como_participar.html">
+                    <a id="como_participar_header" href="./como_participar.html" tabindex="-1">
                         Faça parte</a>
                 </div>
                 <a href="./lojinha.html">Lojinha</a>
                 <a href="./home.html" id="home_header" style="color: #A51515;">Home</a>
                 <div id="esportivo_toggle" style="background-color: #A51515">
-                    <p id="esportivo_header" style="cursor: default;">Esportivo
+                    <p id="esportivo_header" style="cursor: default;" tabindex="0">Esportivo
                         &#9662;</p>
-                    <a href="./modalidades.html" id="modalidades_header">Modalidades</a>
-                    <a href="./campeonatos.html" id="campeonatos_header">
+                    <a href="./modalidades.html" id="modalidades_header" tabindex="-1">Modalidades</a>
+                    <a href="./campeonatos.html" id="campeonatos_header" tabindex="-1">
                         Campeonatos</a>
                 </div>
                 <a href="./eventos.html">Eventos</a>
@@ -201,7 +201,12 @@
                 <h1 class="container"
                     style="font-weight: bold;text-align: center;font-variant: small-caps; margin-top:0px">HISTÓRIA DA
                     ATLÉTICA</h1>
-                <div style="text-align: justify;">
+
+                <div class="d-flex justify-content-center" style="margin: 5px 0 10px 0;">
+                    <div style="height:7px;background-color:#A51515;width: 150px;"></div>
+                </div>
+
+                <div style="text-align: justify; margin-bottom: 70px;">
 
                     <p>A Associação Atlética Acadêmica da Matemática foi fundada em 27 de fevereiro de 1978 por Carlos
                         Miguel Tobar, aluno colombiano que ingressou no IME em 1975. Além dele, faziam parte da Atlética
@@ -219,8 +224,12 @@
                         da Matemática. Essa ideia ganhou força quando o CEFISMA foi desmembrado, dando origem ao CAMat e
                         posteriormente à AAAMat.
                     </p>
-                    <img id="imagens_pag_historia" src="./img/aaamat_foto_antiga1.jpg" alt=""
-                        style="transform:rotate(-2deg);float: left;padding:0;margin: 7px 15px 7px 0;border: 5px solid white;box-shadow: 0 0 7px 2px #3A000E;">
+                    <div id="imagens_pag_historia"
+                        style="justify-content: center;align-items: center;justify-self: center;justify-items: center;align-self: center;align-content: center;float: left;margin: 7px 15px 7px 0;">
+                        <img src="./img/aaamat_foto_antiga1.jpg" alt=""
+                            style="transform:rotate(-2deg);padding:0;border: 5px solid white;box-shadow: 0 0 7px 2px #3A000E;;max-width: min(250px,90vw);">
+
+                    </div>
                     <p>Até 1995 o relacionamento com o CAMat não era muito bom e a única fonte de renda da Atlética era
                         o
                         aluguel do xerox, dividido com o CAMat de forma desproporcional. A gestão do CAMat do ano de
@@ -241,8 +250,13 @@
                         confecção do bandeirão, no reparo dos instrumentos e em inscrições nos campeonatos internos da
                         USP.
                     </p>
-                    <img id="imagens_pag_historia" src="./img/aaamat_foto_antiga2.JPG" alt="" class="container"
-                        style="transform:rotate(2deg);float:right;padding:0;margin: 7px 0px 7px 15px;border: 5px solid white;box-shadow: 0 0 7px 2px #3A000E;">
+                    <div id="imagens_pag_historia"
+                        style="justify-content: center;align-items: center;justify-self: center;justify-items: center;align-self: center;align-content: center;float: right;margin: 7px 0px 7px 15px;">
+                        <img src="./img/aaamat_foto_antiga2.JPG" alt=""
+                            style="transform:rotate(2deg);padding:0;border: 5px solid white;box-shadow: 0 0 7px 2px #3A000E;max-width: min(250px,90vw);">
+
+                    </div>
+
                     <p>Atualmente, a situação já não é a mesma: a Atlética, assim como o Centro Acadêmico, não conta com
                         qualquer auxílio financeiro da diretoria do IME, tendo que custear todas as inscrições em
                         campeonatos e os salários dos técnicos com dinheiro arrecadado dos atletas e na vendas de
