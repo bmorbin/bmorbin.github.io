@@ -107,7 +107,7 @@
     text-decoration: none;
   }
 
-  .a > a:hover, .a > a:visited, .a > a:link, .a > a:active{
+  .a > a:hover, .a > a:visited, .a > a:link, .a > a:active, #campeonatos_header:visited, #modalidades_header:visited, #quem_somos_header:visited, #como_participar_header:visited{
     color: white;
     text-decoration: none;
   }
