@@ -151,7 +151,8 @@ const app = new Vue({
         './img/artigos_lojinha/7.png',
         './img/artigos_lojinha/8.png',
         './img/artigos_lojinha/9.png',
-        './img/artigos_lojinha/10.png'
+        './img/artigos_lojinha/10.png',
+        './img/artigos_lojinha/11.png'
       ]
     }
   }
