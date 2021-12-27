@@ -113,41 +113,29 @@
                                         <hr class="dropdown-divider">
                                     </li>
                                     <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href=./contato.html>Contato</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="nav-item">
                                         <a class="nav-link active" aria-current="page" href=./historia.html>História</a>
                                     </li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown"
-                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Gestão
-                                        </a>
-                                        <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown"
-                                            style="background-color: #A51515">
-                                            <li><a class="nav-link active" href=./quem_somos.html>Quem
-                                                    somos</a></li>
-                                            <li>
-                                                <hr class="dropdown-divider">
-                                            </li>
-                                            <li><a class="nav-link active" href=./como_participar.html>Faça
-                                                    parte</a></li>
-                                        </ul>
-                                    </li>
-
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-
-
                                     <li class="nav-item">
                                         <a class="nav-link active" aria-current="page" href=./lojinha.html>Lojinha</a>
                                     </li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href=./eventos.html>Eventos</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
                                     <li class="nav-item dropdown center">
                                         <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown"
                                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -165,21 +153,25 @@
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-
-                                    <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page" href=./eventos.html>Eventos</a>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown"
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Gestão
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown"
+                                            style="background-color: #A51515">
+                                            <li><a class="nav-link active" href=./quem_somos.html>Quem
+                                                    somos</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a class="nav-link active" href=./como_participar.html>Faça
+                                                    parte</a></li>
+                                        </ul>
                                     </li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-
-                                    <li class="nav-item">
-                                        <a class="nav-link active" aria-current="page" href=./contato.html>Contato</a>
-                                    </li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-
                                 </ul>
                             </div>
                         </div>
@@ -205,7 +197,7 @@
                 <carousel>
                     <!-- Numbers 1-10 in divs -->
                     <div v-for="image in imgs_artigos">
-                        <img src={{image}} :src="image" style="width: 100%;vertical-align: unset;">
+                        <img src={{image}} :src="image" style="width: 100%;vertical-align: top;">
                     </div>
                 </carousel>
             </div>
@@ -216,7 +208,8 @@
 
 
             <div id="cheersshop_link" style="width: 100%; background-color: #A51515;padding: 20px 0 20px 0;">
-                <a href="https://www.cheersshop.com.br/aaamat.imeusp" target="_blank">
+                <a href="https://www.cheersshop.com.br/aaamat.imeusp" target="_blank" id="cheersshop_link"
+                    style="width: 100%; background-color: #A51515;padding: 20px 0 20px 0;">
                     <h6 id="link_cheers_lojinha"
                         style="font-weight: 800; font-style: italic; text-align: center;word-wrap: break-word;font-size: 1.1rem;">
                         &#128073;www.cheersshop.com.br/aaamat.imeusp&#128072;
@@ -232,8 +225,8 @@
                 <div style="height:7px;background-color:#A51515;width: 150px;"></div>
             </div>
             <p class="container" style="text-align: justify;">
-                Na lojinha da AAAMAT, são vendidos produtos com a temática do instituto e da atlética, e o todo
-                dinheiro vindo dessas vendas é voltado para auxiliar as equipes, ajudar nos gastos dos eventos
+                Na lojinha da AAAMAT, são vendidos produtos com a temática do instituto e da atlética, e todo
+                dinheiro vindo dessas vendas é voltado para auxiliar as equipes, ajudar nos gastos de eventos
                 promovidos, além de pagar inscrições de campeonatos, entre outros gastos que a atlética possui.
             </p>
             <p class="container" style="text-align: justify;">
