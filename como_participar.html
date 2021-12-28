@@ -95,12 +95,10 @@
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                            aria-labelledby="offcanvasNavbarLabel"
-                            style="background-color: #A51515;border-left: none;width: 300px;">
+                            aria-labelledby="offcanvasNavbarLabel" style="background-color: #A51515;border-left: none;">
                             <div class="offcanvas-header">
-                                <h5 class="offcanvas-title" id="offcanvasNavbarLabel"
-                                    style="text-align: center;font-weight: 900;font-size: xx-large;color: #8b0606;">
-                                    AAAMAT</h5>
+                                <img class="offcanvas-title" id="offcanvasNavbarLabel" src="./img/aaamat.svg"
+                                    width="55%">
                                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
                                     aria-label="Close"></button>
                             </div>
@@ -176,6 +174,18 @@
                                         <hr class="dropdown-divider">
                                     </li>
                                 </ul>
+                                <div
+                                    style="display: flex;flex-direction: row;justify-content: center;align-items: center;margin:50px">
+                                    <a href="https://www.instagram.com/aaamat_imeusp/" target="_blank">
+                                        <img src="./img/instagram_vinho.svg" width="40px" style="margin: 10px;">
+                                    </a>
+                                    <a href="https://www.facebook.com/aaamat.ime/" target="_blank">
+                                        <img src="./img/facebook_vinho.svg" width="40px" style="margin: 10px;">
+                                    </a>
+                                    <a href="https://www.linkedin.com/company/aaamatimeusp/" target="_blank">
+                                        <img src="./img/linkedin_vinho.svg" width="40px" style="margin: 10px;">
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -196,7 +206,7 @@
                 </h1>
 
                 <div class="d-flex justify-content-center" style="margin: 5px 0 10px 0;">
-                    <div style="height:7px;background-color:#A51515;width: 150px;"></div>
+                    <div style="height:7px;background-color:#A51515;width: 125px;"></div>
                 </div>
 
                 <p style="margin-top: 15px;text-align: center;">
@@ -267,13 +277,13 @@
                     style="height:2px;width:100% ;border-width:0;color:rgb(29, 29, 29);background-color:rgb(29, 29, 29); opacity: 70%;margin: 30px 0 0 0;">
 
                 <h3
-                    style="font-weight: bold;text-align: center;font-variant: small-caps; margin-top:30px;margin-bottom: 30px;">
+                    style="font-weight: bold;text-align: center;font-variant: small-caps; margin-top:30px;margin-bottom: 30px;color: #A51515;">
                     SAIBA MAIS
                     SOBRE CADA CARGO DA GESTÃO:</h3>
 
                 <div style="display: inline-flex;width: 100%;flex-direction: row;flex-wrap: wrap;padding-bottom:50px">
                     <!-- ARTE -->
-                    <div id="box_cargo_gestao" class="impar">
+                    <div id="box_cargo_gestao" class="impar primeira-box">
                         <img src="./img/cargos/arte.svg" style="max-width:70px; max-height:70px;margin-bottom: 5px;"
                             height="100%" width="100%">
                         <div style="display: flex;flex-direction: row;align-items: flex-start;">
@@ -640,16 +650,7 @@
         flex-direction: row;
         height: 100%;
         padding: 20px;
-        /* border-right: 2px solid white; */
-
-
     }
-
-
-
-
-
-
 
     #faca_parte_gestao_botao:hover,
     #faca_parte_gestao_botao:active {
@@ -711,7 +712,7 @@
             text-align: center;
             justify-content: center;
             align-items: center;
-            /* border-bottom: 2px dotted darkred; */
+            border-bottom: 2px dotted darkred;
             margin-top: 5px;
             margin-bottom: 5px;
         }
@@ -720,12 +721,8 @@
             display: none;
         }
 
-        .impar {
-            background-color: darkred;
-        }
-
-        .par {
-            background-color: #A51515;
+        .primeira-box {
+            border-top: 2px dotted darkred;
         }
 
     }
