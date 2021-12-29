@@ -502,7 +502,7 @@
                     <div style="background-color:${ind % 2 == 0 ? "#3A000E" : "#A51515"};padding:10px;border-radius:5px">
                                     <div style="height:0;width:100%;padding-bottom:100%;position:relative;overflow:hidden;">
                                         <div style="height:100%;width:100%;position:absolute;display:flex;justify-content:center;align-items:center">
-                                            <img src="${imageExists(ele.foto_perfil) ? ele.foto_perfil : "./img/generic-user.jpg"}" width="100%" >
+                                            <img src="${ele.foto_perfil != "" ? (imageExists(ele.foto_perfil) ? ele.foto_perfil : "./img/generic-user.jpg") : "./img/generic-user.jpg"}" width="100%" >
                                         </div>
                                     </div>    
                                     <p style="margin:0!important; font-weight: 700;">${ele.nome}</p>
