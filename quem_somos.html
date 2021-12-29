@@ -86,9 +86,9 @@
             <div class="a_responsivo">
                 <nav class="navbar navbar-dark " style="padding:0;margin:0;position: unset;width: 100%;">
                     <div class="container-fluid">
-                        <a id="logo_aaamat_navbar" class="navbar-brand" href=./home.html>
-                            <img src="./img/logoaaamat.svg" alt="Logo AAAMAT" title="Home"
-                                style="height: 40px;width: 40px;">
+                        <a id="logo_aaamat_navbar" class="navbar-brand" href=./home.html
+                            style="display:flex;align-items:center">
+                            <img src="./img/aaamat.svg" alt="AAAMAT" title="Home" style="height: 20px">
                         </a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                             data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -98,7 +98,7 @@
                             aria-labelledby="offcanvasNavbarLabel" style="background-color: #A51515;border-left: none;">
                             <div class="offcanvas-header">
                                 <img class="offcanvas-title" id="offcanvasNavbarLabel" src="./img/aaamat.svg"
-                                    width="55%">
+                                    width="35%">
                                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
                                     aria-label="Close"></button>
                             </div>
@@ -389,6 +389,8 @@
 
     .icon_contato_membro {
         margin-right: 5px;
+        display: flex;
+        align-items: center;
     }
 
     .carousel-control-next,
@@ -404,20 +406,17 @@
 
     }
 
-    @media(max-width: 670px) {
-        .contato_membro {
-            flex-direction: column !important;
-            align-items: center;
-            font-size: smaller;
-        }
+    .contato_membro {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        font-size: smaller;
+        word-break: break-all;
+    }
 
-        #img_perfil_membro {
-            width: 100% !important;
-        }
-
-        .icon_contato_membro {
-            margin-right: 0px;
-        }
+    .icon_contato_membro {
+        margin-right: 0px;
     }
 </style>
 
@@ -427,21 +426,6 @@
     const url = 'https://script.google.com/macros/s/AKfycbyvhNlEQZHVnKDpvytzpGUdMjVYLUqqp1lSO1qil73cwvC_4XR3HcITGhStkysDbiAkPw/exec'
     const output = document.querySelector('#gestoes_container');
     getData();
-
-    function imageExists(image_url) {
-
-        try {
-            var http = new XMLHttpRequest();
-
-            http.open('HEAD', image_url, false);
-            http.send();
-
-            return http.status != 404;
-        } catch (_) {
-            return false;
-        }
-
-    }
 
     function getData() {
         fetch(url).then((res) => {
@@ -463,7 +447,7 @@
 
                                 <div id="gestao-${ano}" data-bs-toggle="collapse" href="#collapseGestao${ano}" style="margin: 0;">
                                     <h5 
-                                        style="background-color: ${ind % 2 == 0 ? "#3A000E" : "darkred"}; text-align: center; font-weight: 600; color: whitesmoke;width: 100%;padding: 10px;margin:0;border-radius: 10px 10px 0 0;text-shadow: 1px 1px 2px black">
+                                        style="background-color: ${ano % 2 != 0 ? "#3A000E" : "darkred"}; text-align: center; font-weight: 600; color: whitesmoke;width: 100%;padding: 10px;margin:0;border-radius: 10px 10px 0 0;text-shadow: 1px 1px 2px black">
                                         Gestão ${ano}
                                     </h5>
                                 </div>
@@ -496,99 +480,173 @@
                 dict[ano].forEach((ele, i) => {
                     const output_membro = document.querySelector('#container_collapse_Gestao-' + ano);
                     const div_membro = document.createElement('div');
-                    div_membro.style = 'width: 20%; min-width: 120px; max-width: 240px;padding: 10px;text-align: center;';
+                    div_membro.style = 'width: 100%; min-width: 120px; max-width: 240px;padding: 10px;text-align: center;';
                     div_membro.id = "img_perfil_membro"
+                    const user_redes = [ele.email, ele.telefone, ele.instagram, ele.linkedin, ele.outro_contato];
+                    const nome_redes = ["email", "telefone", "instagram", "linkedin", "outro_contato"];
+                    var count_empty = 0;
+                    var j_unique = 0;
+                    for (j = 0; j < 5; j++) {
+                        user_redes[j] == "" ? count_empty++ : j_unique = j
+                    };
+
+                    var redes = "";
+                    var rede = "";
+                    if (count_empty == 5) {
+                        redes = "C";
+                    }
+                    else if (count_empty == 4) {
+                        redes = "B";
+                        rede = nome_redes[j_unique];
+                    }
+                    else {
+                        redes = "A";
+                    }
+
+
                     div_membro.innerHTML = `
-                    <div style="background-color:${ind % 2 == 0 ? "#3A000E" : "#A51515"};padding:10px;border-radius:5px">
+                    <div style="background-color:${ano % 2 != 0 ? "#3A000E" : "#A51515"};padding:10px;border-radius:5px">
                                     <div style="height:0;width:100%;padding-bottom:100%;position:relative;overflow:hidden;">
-                                        <div style="height:100%;width:100%;position:absolute;display:flex;justify-content:center;align-items:center">
-                                            <img src="${ele.foto_perfil != "" ? (imageExists(ele.foto_perfil) ? ele.foto_perfil : "./img/generic-user.jpg") : "./img/generic-user.jpg"}" width="100%" >
+                                        <div style="height:100%;width:100%;position:absolute;display:flex;justify-content:center;align-items:center;background-image:url('${ele.foto_perfil}'),url(./img/generic-user.jpg);background-size:cover">
+                                            
                                         </div>
                                     </div>    
                                     <p style="margin:0!important; font-weight: 700;">${ele.nome}</p>
-                                    <p style="font-weight: 600;font-style: italic;">
+                                    <p style="font-weight: 500;font-style: italic;">
                                         ${ele.cargos}</p>
 
-                                        <div id="carousel_contatos_membro_${ano}${i}" class="carousel slide" data-bs-ride="carousel">
-                                            <div class="carousel-inner">
-                                                ${ele.email != "" ?
-                            `<div class="carousel-item active">
-                                                
-                                            <div class="contato_membro" style="display:flex;flex-direction:row;justify-content:center;word-break:break-all;">
-                                            <div class="icon_contato_membro"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
-                                                <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
-                                            </svg></div>
-                                            <div>${ele.email}</div>
-                                        </div></div>`
-                            :
-                            ""
-                        }
-                        ${ele.telefone != "" ?
-                            `<div class="carousel-item ${ele.email == "" ? "active" : ""}">
-                                                
-                                            <div class="contato_membro" style="display:flex;flex-direction:row;justify-content:center;word-break:break-all;">
-                                            <div class="icon_contato_membro"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
-                                                <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
-                                            </svg></div>
-                                            <div>${ele.telefone}</div>
-                                        </div></div>`
-                            :
-                            ""
-                        }                       
-                        ${ele.linkedin != "" ?
-                            `<div class="carousel-item ${ele.email == "" && ele.telefone == "" ? "active" : ""}">
-<div class="contato_membro" style="display:flex;flex-direction:row;justify-content:center;word-break:break-all;">
-                                            <div class="icon_contato_membro"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
-                                                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
-                                            </svg></div>
-                                            <div>${ele.linkedin}</div>
-                                        </div></div>`
-                            :
-                            ""
-                        } 
-                        ${ele.instagram != "" ?
-                            `<div class="carousel-item ${ele.email == "" && ele.telefone == "" && ele.linkedin == "" ? "active" : ""}">
-                                                    
-                                                <div class="contato_membro" style="display:flex;flex-direction:row;justify-content:center;word-break:break-all;">
+                                        ${redes == "B" ? `
+
+                                            ${rede == "instagram" ? `
+                                            <div class="contato_membro" >
                                             <div class="icon_contato_membro"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
                                                 <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
                                             </svg></div>
-                                            <div>${ele.instagram}</div>
-                                        </div></div>`
-                            :
-                            ""
-                        }     
-                        ${ele.outro_contato != "" ?
-                            `<div class="carousel-item ${ele.email == "" && ele.telefone == "" && ele.linkedin == "" && ele.instagram == "" ? "active" : ""}">
-                                                    
-                                                <div class="contato_membro" style="display:flex;flex-direction:row;justify-content:center;word-break:break-all;">
+                                            <div style="font-size:smaller">${ele.instagram}</div>
+                                        </div>
+                                            `: ''}
+                                            ${rede == "linkedin" ? `
+                                            <div class="contato_membro" >
+                                            <div class="icon_contato_membro"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                                                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                                            </svg></div>
+                                            <div style="font-size:smaller">${ele.linkedin}</div>
+                                        </div>
+                                            `: ''}
+                                            ${rede == "telefone" ? `
+                                            <div class="contato_membro" >
+                                            <div class="icon_contato_membro"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                                            </svg></div>
+                                            <div style="font-size:smaller">${ele.telefone}</div>
+                                        </div>
+                                            `: ''}
+                                            ${rede == "email" ? `
+                                            <div class="contato_membro" >
+                                            <div class="icon_contato_membro"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                                                <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+                                            </svg></div>
+                                            <div style="font-size:smaller">${ele.email}</div>
+                                        </div>
+                                            `: ''}
+                                            ${rede == "outro_contato" ? `
+                                            <div class="contato_membro" >
                                             <div class="icon_contato_membro"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
                                                 <path fill-rule="evenodd" d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89.471-1.178-1.178.471L5.93 9.363l.338.215a.5.5 0 0 1 .154.154l.215.338 7.494-7.494Z"/>
                                             </svg></div>
-                                            <div >${ele.outro_contato}</div>
+                                            <div style="font-size:smaller" >${ele.outro_contato}</div>
+                                        </div>
+                                            `: ''}
+                                        
+
+
+                                        `: (redes == "A" ? `
+                                        
+                                        <div id="carousel_contatos_membro_${ano}${i}" class="carousel slide" data-bs-ride="carousel">
+                                            <div class="carousel-inner">
+                                                ${ele.email != "" ?
+                                `<div class="carousel-item active">
+                                                
+                                            <div class="contato_membro">
+                                            <div class="icon_contato_membro"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                                                <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+                                            </svg></div>
+                                            <div style="font-size:smaller">${ele.email}</div>
                                         </div></div>`
-                            :
-                            ""
-                        }
+                                :
+                                ""
+                            }
+                        ${ele.telefone != "" ?
+                                `<div class="carousel-item ${ele.email == "" ? "active" : ""}">
+                                                
+                                            <div class="contato_membro" >
+                                            <div class="icon_contato_membro"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                                            </svg></div>
+                                            <div style="font-size:smaller">${ele.telefone}</div>
+                                        </div></div>`
+                                :
+                                ""
+                            }                       
+                        ${ele.linkedin != "" ?
+                                `<div class="carousel-item ${ele.email == "" && ele.telefone == "" ? "active" : ""}">
+<div class="contato_membro" >
+                                            <div class="icon_contato_membro"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                                                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                                            </svg></div>
+                                            <div style="font-size:smaller">${ele.linkedin}</div>
+                                        </div></div>`
+                                :
+                                ""
+                            } 
+                        ${ele.instagram != "" ?
+                                `<div class="carousel-item ${ele.email == "" && ele.telefone == "" && ele.linkedin == "" ? "active" : ""}">
+                                                    
+                                                <div class="contato_membro" >
+                                            <div class="icon_contato_membro"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                                            </svg></div>
+                                            <div style="font-size:smaller">${ele.instagram}</div>
+                                        </div></div>`
+                                :
+                                ""
+                            }     
+                        ${ele.outro_contato != "" ?
+                                `<div class="carousel-item ${ele.email == "" && ele.telefone == "" && ele.linkedin == "" && ele.instagram == "" ? "active" : ""}">
+                                                    
+                                                <div class="contato_membro" >
+                                            <div class="icon_contato_membro"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89.471-1.178-1.178.471L5.93 9.363l.338.215a.5.5 0 0 1 .154.154l.215.338 7.494-7.494Z"/>
+                                            </svg></div>
+                                            <div style="font-size:smaller" >${ele.outro_contato}</div>
+                                        </div></div>`
+                                :
+                                ""
+                            }
                                                 
                                             </div>
                                             <button class="carousel-control-prev" type="button" data-bs-target="#carousel_contatos_membro_${ano}${i}" data-bs-slide="prev">
                                                 <span class="carousel-control-prev-icon" aria-hidden="true">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="${ind % 2 != 0 ? "#3A000E" : "darkred"}" class="bi bi-caret-left-square-fill" viewBox="0 0 16 16" style="filter:drop-shadow(0px 0px 1px ${ind % 2 != 0 ? "red" : "black"})">
-  <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm10.5 10V4a.5.5 0 0 0-.832-.374l-4.5 4a.5.5 0 0 0 0 .748l4.5 4A.5.5 0 0 0 10.5 12z"/>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+  <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
 </svg>
                                                     </span>
                                                 <span class="visually-hidden">Previous</span>
                                             </button>
                                             <button class="carousel-control-next" type="button" data-bs-target="#carousel_contatos_membro_${ano}${i}" data-bs-slide="next">
                                                 <span class="carousel-control-next-icon" aria-hidden="true">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="${ind % 2 != 0 ? "#3A000E" : "darkred"}" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16" style="filter: drop-shadow(0px 0px 1px ${ind % 2 != 0 ? "red" : "black"})">
-  <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4v8z"/>
+      
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+  <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
 </svg>
                                                 </span>
                                                 <span class="visually-hidden">Next</span>
                                             </button>
                                         </div>  
+
+                                        `: '')}
+
+                                        
                               </div>
                                      `;
 
@@ -598,50 +656,6 @@
 
 
 
-
-            //             json.data.forEach(ele => {
-            //                 const div = document.createElement('div');
-            //                 div.className = 'col';
-            //                 div.innerHTML = `
-            //                         <div class="card text-white bg-dark mb-3 h-100">
-            //                             <div class="card-header ">
-            //                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#6c757d"
-            //                                     class="bi bi-calendar3" viewBox="0 0 16 16">
-            //                                     <path
-            //                                         d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
-            //                                     <path
-            //                                         d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
-            //                                 </svg>
-            //                                 <small class="text-muted" style="font-size:12px">Publicado em ${''.concat(ele.posted.slice(8, 10), '/', ele.posted.slice(5, 7), '/', ele.posted.slice(0, 4))}</small>
-            //                             </div>
-
-
-            //                                 <img src=${ele.imagem} class= "card-img-top" height="250px" width="250px" onerror="this.onerror=null; this.src='./img/fluffy_silhueta2.png'">
-
-            //                             <div class="card-body">
-            //                                 <h5 class="card-title" style="font-weight: 600; text-shadow: 1px 1px 2px black">
-            //                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red"
-            //                                     class="bi bi-pin-angle-fill" viewBox="0 0 16 16">
-            //                                     <path
-            //                                     d="M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a5.927 5.927 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707-.195-.195.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a5.922 5.922 0 0 1 1.013.16l3.134-3.133a2.772 2.772 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146z" />
-            //                                     </svg>
-            //                                     ${ele.title}
-            //                                     </h5>
-            //                                     <p class="card-text">${ele.content}</p>
-            //                                     </div >
-
-            //                                 <a id="a_atualizacoes" href="${ele.link}" class="btn btn-secondary" style="width:100%" target="_blank">   
-            //                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16">
-            //   <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/>
-            //   <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/>
-            // </svg>
-            //                                     Link
-            //                                     </a>
-
-
-            //                         </div >`;
-            //                 output.append(div);
-            //             });
         })
     }
 
