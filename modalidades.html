@@ -33,16 +33,18 @@
             if ($(this).scrollTop() > 50) {
                 $('.logo_aaamat').fadeOut();
                 document.getElementById("logo_aaamat_navbar").style.visibility = "visible";
+
             }
             else {
                 $('.logo_aaamat').fadeIn();
                 document.getElementById("logo_aaamat_navbar").style.visibility = "hidden";
             }
         }
-
-
     });
+
 </script>
+
+
 
 
 
@@ -72,7 +74,7 @@
                 </div>
                 <a href="./lojinha.html">Lojinha</a>
                 <a href="./home.html" id="home_header" style="color: #A51515;">Home</a>
-                <div id="esportivo_toggle" style="background-color: #A51515">
+                <div id="esportivo_toggle" style="background-color: #A51515;">
                     <p id="esportivo_header" style="cursor: default;" tabindex="0">Esportivo
                         &#9662;</p>
                     <a href="./modalidades.html" id="modalidades_header" tabindex="-1">Modalidades</a>
@@ -195,10 +197,83 @@
 
         </header>
 
-
-
         <!-- AQUI FICARÁ O CONTEÚDO DA PÁGINA -->
-        <div class='b' style="display: flex;flex-direction:column; ">
+        <div class='b' style="display: flex;flex-direction:column;padding-bottom: 30px;">
+
+            <div class="container" style="padding-bottom: 15px ;">
+                <h1 style="font-weight: bold;text-align: center;font-variant: small-caps; margin-top:15px">MODALIDADES
+                </h1>
+
+                <div class="d-flex justify-content-center" style="margin: 5px 0 10px 0;">
+                    <div style="height:7px;background-color:#A51515;width: 125px;"></div>
+                </div>
+
+
+                <p style="margin-top: 15px;text-align: center;font-weight: 600;">
+                    O esporte universitário não só faz bem para a saúde física, como também para a saúde mental dos
+                    alunos.
+                </p>
+
+                <p style="text-align: justify;text-align-last: center;">Nesta página, estão
+                    disponibilizados os contatos dos diretores de cada
+                    modalidade
+                    (DMs),
+                    além de uma <a style="color: currentColor;text-decoration: underline;"
+                        href="#tabela_treinos">tabela</a> com os horários dos
+                    treinos. Entre em contato com o DM da sua modalidade do coração e vire um atleta do time. <a
+                        style="background-color: #A51515;">Todos
+                        serão muito bem-vindos em qualquer time!</a>
+                </p>
+
+
+                <div class="logo_aaamat_modalidades"
+                    style="display: flex;width: 100%;justify-content: center;align-items: center;filter: grayscale();">
+                    <img id="img_logo_aaamat_modalidades" src="./img/aaamat-modalidades2.svg"
+                        style="max-height: 400px;">
+                </div>
+                <style>
+                    #img_logo_aaamat_modalidades:hover {
+                        filter: saturate(1.2) !important;
+                        transition: 1s;
+                    }
+                </style>
+                <script>
+                    $(window).scroll(function () {
+                        $(".logo_aaamat_modalidades").css({ 'filter': "none", "transition": "1.5s" })
+                    })
+                    $(".logo_aaamat_modalidades").mouseover(function () {
+                        $(".logo_aaamat_modalidades").css({ 'filter': "none", "transition": "1.5s" })
+                    })
+                </script>
+                <!-- <style>
+                    .logo_aaamat_modalidades:hover {
+                        filter: none !important;
+                    }
+                </style> -->
+
+
+            </div>
+
+
+
+
+            <div id="modalidades" class="container">
+                <!-- Versão para PC/telas maiores -->
+                <div id="modalidades-longwidth">
+
+                </div>
+
+                <!-- Versão para Celular/telas menores -->
+                <div id="modalidades-narrowwidth">
+
+                </div>
+            </div>
+
+
+            <!-- Tabela de Treinos -->
+            <div id="tabela_treinos" class="container">
+
+            </div>
 
         </div>
 
@@ -291,3 +366,63 @@
 </body>
 
 </html>
+
+
+<script src="https://unpkg.com/vue@next"></script>
+<script>
+    const url = 'https://script.google.com/macros/s/AKfycbyBTIJOJ6nNTkSrXF-ORUoQFFfbOcj7RzcCVzoeGrO1FLK-Bcz06p02o_urYUkRNHQFkA/exec';
+    const output = document.querySelector('#');
+    // getData();
+
+    function getData() {
+        fetch(url).then((res) => {
+            return res.json()
+        }).then((json) => {
+            // console.log(json));
+            json.data.forEach(ele => {
+                const div = document.createElement('div');
+                div.className = 'col';
+                div.innerHTML = `
+                        <div class="card text-white bg-dark mb-3 h-100">
+                            <div class="card-header ">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#6c757d"
+                                    class="bi bi-calendar3" viewBox="0 0 16 16">
+                                    <path
+                                        d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
+                                    <path
+                                        d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                                </svg>
+                                <small class="text-muted" style="font-size:12px">Publicado em ${''.concat(ele.posted.slice(8, 10), '/', ele.posted.slice(5, 7), '/', ele.posted.slice(0, 4))}</small>
+                            </div>
+                            
+
+                                <img src=${ele.imagem} class= "card-img-top" height="250px" width="250px" onerror="this.onerror=null; this.src='./img/fluffy_silhueta2.png'">
+                            
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-weight: 600; text-shadow: 1px 1px 2px black">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red"
+                                    class="bi bi-pin-angle-fill" viewBox="0 0 16 16">
+                                    <path
+                                    d="M9.828.722a.5.5 0 0 1 .354.146l4.95 4.95a.5.5 0 0 1 0 .707c-.48.48-1.072.588-1.503.588-.177 0-.335-.018-.46-.039l-3.134 3.134a5.927 5.927 0 0 1 .16 1.013c.046.702-.032 1.687-.72 2.375a.5.5 0 0 1-.707 0l-2.829-2.828-3.182 3.182c-.195.195-1.219.902-1.414.707-.195-.195.512-1.22.707-1.414l3.182-3.182-2.828-2.829a.5.5 0 0 1 0-.707c.688-.688 1.673-.767 2.375-.72a5.922 5.922 0 0 1 1.013.16l3.134-3.133a2.772 2.772 0 0 1-.04-.461c0-.43.108-1.022.589-1.503a.5.5 0 0 1 .353-.146z" />
+                                    </svg>
+                                    ${ele.title}
+                                    </h5>
+                                    <p class="card-text">${ele.content}</p>
+                                    </div >
+                                    
+                                <a id="a_atualizacoes" href="${ele.link}" class="btn btn-secondary" style="width:100%" target="_blank">   
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16">
+  <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/>
+  <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/>
+</svg>
+                                    Link
+                                    </a>
+                            
+                            
+                        </div >`;
+                output.append(div);
+            });
+        })
+    }
+
+</script>

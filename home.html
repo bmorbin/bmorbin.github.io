@@ -204,31 +204,34 @@
         <!-- AQUI FICARÁ O CONTEÚDO DA PÁGINA -->
         <div class='b' style="display: flex;flex-direction:column; ">
 
+            <div
+                style="background-color: rgb(0, 0, 0); background-image: url(./img/aaamat_padrao2.svg);background-size: cover;background-position: center center;">
 
-            <div class="carrossel_home" style="margin-top: 0px;">
+                <div class="carrossel_home" style="margin-top: 0px;">
 
-                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active" data-bs-interval="10000">
-                            <img src="./img/bandeirao.png" class="d-block w-100" alt="...">
+                    <div id="carouselExampleControls" class="carousel slide container" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-bs-interval="10000">
+                                <img src="./img/bandeirao.png" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="./img/imeanes2_foto.png" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="./img/fachada_imeusp.png" class="d-block w-100" alt="...">
+                            </div>
                         </div>
-                        <div class="carousel-item" data-bs-interval="5000">
-                            <img src="./img/imeanes2_foto.png" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item" data-bs-interval="5000">
-                            <img src="./img/fachada_imeusp.png" class="d-block w-100" alt="...">
-                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
                 </div>
             </div>
 
@@ -246,6 +249,15 @@
                         2px  2px 0 #060606; ">
                         ÚLTIMAS ATUALIZAÇÕES&#9664;</h4>
 
+                    <div id="carregando" class="d-flex justify-content-center" style="margin-top: 20px;">
+                        <!-- <div class="spinner-grow text-light" style="width: 3rem; height: 3rem;" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div> -->
+                        <div class="spinner-border text-light" role="status" style="width: 3rem; height: 3rem;">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+
                     <div id="cards_atualizacoes" class="border-light d-flex bd-highlight align-items-stretch "
                         style="margin: 20px 0 20px 0;width:100%;height: 515px;overflow-y: hidden;">
                     </div>
@@ -258,17 +270,36 @@
 
             <div class="container" style="margin-bottom: 30px;">
 
-                <h1 style="font-weight: bold;text-align: center;font-variant: small-caps; margin-top:15px">O QUE É
-                    A AAAMAT?</h1>
+
+                <h2 style="font-weight: bold;text-align: center;font-variant: small-caps; margin-top:15px">O QUE É
+                    A AAAMAT?</h2>
 
                 <div class="d-flex justify-content-center" style="margin: 5px 0 10px 0;">
                     <div style="height:7px;background-color:#A51515;width: 150px;"></div>
                 </div>
 
-                <p style="margin-top: 15px;text-align: center;">A Associação Atlética Acadêmica da Matemática é uma
-                    instituição gerenciada por um grupo de alunos do IME que cuidam da organização de todas as
-                    modalidades esportivas, campeonatos e inters. Além disso, realizam festas e eventos de integração e
-                    também vendem produtos personalizados do instituto.
+                <p style="margin-top: 15px;text-align: justify;text-align-last: center;">
+                    A Associação Atlética Acadêmica da Matemática é uma
+                    instituição criada e gerenciada inteiramente por um grupo de alunos do IME (Instituto de Matemática
+                    e Estatística da
+                    Universidade de São Paulo) que busca proporcionar aos
+                    alunos atividades extracurriculares ligadas ao meio esportivo universitário, visando uma
+                    maior integração, não só entre os próprios alunos do IME, como também de todas as unidades da USP e
+                    até mesmo outras faculdades.
+
+                </p>
+
+                <h2 style="font-weight: bold;text-align: center;font-variant: small-caps; margin-top:15px">O QUE FAZ
+                    A AAAMAT?</h2>
+                <div class="d-flex justify-content-center" style="margin: 5px 0 10px 0;">
+                    <div style="height:7px;background-color:#A51515;width: 150px;"></div>
+                </div>
+
+                <p style="margin-top: 15px;text-align: justify;text-align-last: center;">
+                    A Atlética é responsável pela inscrição e organização de todas as modalidades do IME. Além disso,
+                    realizamos festas e eventos de integração e
+                    também vendemos produtos personalizados do instituto, como agasalhos, camisetas, adesivos e outros
+                    artigos.
                 </p>
 
                 <hr
@@ -487,6 +518,10 @@
             return res.json()
         }).then((json) => {
             // console.log(json));
+            const first_output = document.querySelector('#fundo_atualizacoes');
+            const disappear_spinner = document.createElement('style');
+            disappear_spinner.innerHTML = "#carregando{display: none!important;}";
+            first_output.append(disappear_spinner);
             json.data.forEach(ele => {
                 const div = document.createElement('div');
                 div.className = 'col';
