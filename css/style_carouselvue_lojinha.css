@@ -42,6 +42,7 @@ body {
 }
 .carousel-item{
   display:unset!important;
+  cursor: pointer;
 }
 
 @media (max-width: 670px){
