@@ -268,7 +268,7 @@
                                 class="bi bi-search" viewBox="0 0 16 16">
                                 <path
                                     d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                            </svg>Selecione a modalidade
+                            </svg>Selecione uma modalidade
                         </button>
 
 
@@ -283,7 +283,7 @@
                         </div>
                     </div>
                     <div id="cards_modalidades"
-                        style="width: 100%;display: flex;justify-content: center;align-items: center;padding:20px;">
+                        style="width: 100%;display: flex;justify-content: center;align-items: center;padding:20px 0 20px 0;">
 
 
                     </div>
@@ -294,7 +294,7 @@
                     </style>
                     <style id="style_modalidade_show">
                         #ATLETISMO {
-                            display: initial !important;
+                            display: flex !important;
                         }
                     </style>
 
@@ -306,7 +306,7 @@
                             $("#style_modalidade_show").empty();
                             var style_modalidade = document.querySelector('#style_modalidade_show');
                             const a = document.createElement('style');
-                            a.innerHTML = `#${modalidade}{display:initial!important}`;
+                            a.innerHTML = `#${modalidade}{display:flex!important}`;
                             style_modalidade.append(a);
                             $('#' + ultimo_ativo).attr('class', 'dropdown-item');
                             ultimo_ativo = modalidade;
@@ -451,6 +451,15 @@
         border-width: 0px;
     }
 
+    .dropdown-item {
+        padding: 0;
+    }
+
+    .dropdown-item.active {
+        width: 100%;
+
+    }
+
     .btn-secondary:focus,
     .btn-secondary:active:focus {
         box-shadow: 0 0 0 1px #A51515;
@@ -459,6 +468,11 @@
     .table-dark {
         --bs-table-hover-bg: black;
     }
+
+    .dropdown-menu.dropdown-menu-dark.show {
+        width: 100%;
+    }
+
 
     @media(max-width:500px) {
         .team_image {
@@ -549,7 +563,7 @@
                                 <div style="display: flex;flex-direction: column;">
 
                                     <p
-                                        style="font-weight: 600; text-align: center;margin: 0;border-bottom: 2px solid white;">
+                                        style="font-weight: 600; text-align: center;margin: 0;border-bottom: 2px solid #A51515;">
                                         DM1:</p>
                                     <p style="font-weight: initial;text-align:center;margin:0">${ele.nome_dm1}</p>
                                     <div
@@ -576,7 +590,7 @@
                                 <br>
                                 <div style="display: flex;flex-direction: column;">
                                     <p
-                                        style="font-weight: 600; text-align: center;margin: 0;border-bottom: 2px solid white;">
+                                        style="font-weight: 600; text-align: center;margin: 0;border-bottom: 2px solid #A51515;">
                                         DM2:</p>
                                         <p style="font-weight: initial;text-align:center;margin:0">${ele.nome_dm2}</p>
                                     <div
@@ -655,6 +669,7 @@
 
             text_out.innerHTML = text_append_botao;
             out_botao_selecionar_modalidade.append(text_out);
+            Escolha_modalidade("ATLETISMO");
         })
     }
 
