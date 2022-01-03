@@ -538,8 +538,11 @@
                                 <small class="text-muted" style="font-size:12px">Publicado em ${''.concat(ele.posted.slice(8, 10), '/', ele.posted.slice(5, 7), '/', ele.posted.slice(0, 4))}</small>
                             </div>
                             
-
-                                <img src=${ele.imagem} class= "card-img-top" height="250px" width="250px" onerror="this.onerror=null; this.src='./img/fluffy_silhueta2.png'">
+                            <div style="height:0;width:100%;padding-bottom:100%;position:relative;overflow:hidden;">
+                                <div style="height:100%;width:100%;position:absolute;display:flex;justify-content:center;align-items:center;background-image:url('${ele.imagem}'),url(./img/fluffy_silhueta2.png);background-size:cover;background-position: center center;">                
+                                </div>
+                            </div> 
+                                
                             
                             <div class="card-body">
                                 <h5 class="card-title" style="font-weight: 600; text-shadow: 1px 1px 2px black">
