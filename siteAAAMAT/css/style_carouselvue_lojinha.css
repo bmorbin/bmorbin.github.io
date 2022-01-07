@@ -1,0 +1,56 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.carousel {
+  background-color: #ddd;
+  background-image: url(../img/bg_capa.png);
+  background-size:cover;
+  background-position: center center;
+  height: 360px;
+  position: relative;
+  overflow: hidden;
+}
+.carousel > div {
+  background-color: #000;
+  color: #fff;
+  width: 280px;
+  height: 280px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  line-height: 10vw;
+  font-family: sans-serif;
+  font-size: 6vw;
+}
+.carousel .dots {
+  position: absolute;
+  bottom: 0;
+  padding: 5%;
+  width: 100%;
+}
+.carousel .dots .dot {
+  background-color: #000;
+}
+.carousel-item{
+  display:unset!important;
+  cursor: pointer;
+}
+
+@media (max-width: 670px){
+  .carousel{
+    height: 200px;
+  }
+  .carousel > div{
+    width: 150px;
+    height: 150px;
+  }
+}
