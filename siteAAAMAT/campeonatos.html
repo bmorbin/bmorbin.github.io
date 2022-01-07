@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="shortcut icon" type="image/ico" href="./img/favicon.ico" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Campeonatos - AAAMAT</title>
+</head>
+
+<!-- https://tutorialdeep.com/knowhow/show-hide-div-on-scroll-jquery/ -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    $(window).scroll(function () {
+        if ($(this).width() > 670) {
+            if ($(this).scrollTop() > 75) {
+                $('.logo_aaamat').fadeOut();
+                document.getElementById("home_header").style.color = "white";
+            }
+            else {
+                $('.logo_aaamat').fadeIn();
+                document.getElementById("home_header").style.color = "#A51515";
+            }
+        }
+        else {
+            if ($(this).scrollTop() > 50) {
+                $('.logo_aaamat').fadeOut();
+                document.getElementById("logo_aaamat_navbar").style.visibility = "visible";
+            }
+            else {
+                $('.logo_aaamat').fadeIn();
+                document.getElementById("logo_aaamat_navbar").style.visibility = "hidden";
+            }
+        }
+
+
+    });
+</script>
+
+
+
+<body>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <div style="background-color: #3A000E;">
+
+        <!-- CABEÇALHO -->
+        <header>
+            <img class="logo_aaamat" src="./img/logoaaamat.svg" alt="Logo AAAMAT" title="Home">
+            <a class="logo_aaamat" href=./home alt="Logo AAAMAT" title="Home"></a>
+            <div class='z'></div>
+            <div class='a'>
+                <a href="./historia">História</a>
+                <div id="gestao_toggle" style="background-color: #A51515">
+                    <p id="gestao_header" style="cursor: default;" tabindex="0">Gestão
+                        &#9662;</p>
+                    <a id="quem_somos_header" href="./quem_somos" tabindex="-1">Quem
+                        somos</a>
+                    <a id="como_participar_header" href="./como_participar" tabindex="-1">
+                        Faça parte</a>
+                </div>
+                <a href="./lojinha">Lojinha</a>
+                <a href="./home" id="home_header" style="color: #A51515;">Home</a>
+                <div id="esportivo_toggle" style="background-color: #A51515">
+                    <p id="esportivo_header" style="cursor: default;" tabindex="0">Esportivo
+                        &#9662;</p>
+                    <a href="./modalidades" id="modalidades_header" tabindex="-1">Modalidades</a>
+                    <a href="./campeonatos" id="campeonatos_header" tabindex="-1">
+                        Campeonatos</a>
+                </div>
+                <a href="./eventos">Eventos</a>
+                <a href="./contato">Contato</a>
+            </div>
+
+            <div class="a_responsivo">
+                <nav class="navbar navbar-dark " style="padding:0;margin:0;position: unset;width: 100%;">
+                    <div class="container-fluid">
+                        <a id="logo_aaamat_navbar" class="navbar-brand" href=./home
+                            style="display:flex;align-items:center">
+                            <img src="./img/aaamat.svg" alt="AAAMAT" title="Home" style="height: 20px">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                            aria-labelledby="offcanvasNavbarLabel" style="background-color: #A51515;border-left: none;">
+                            <div class="offcanvas-header">
+                                <img class="offcanvas-title" id="offcanvasNavbarLabel" src="./img/aaamat.svg"
+                                    width="35%">
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href=./home>Home</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href=./contato>Contato</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href=./historia>História</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href=./lojinha>Lojinha</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href=./eventos>Eventos</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="nav-item dropdown center">
+                                        <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown"
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Esportivo
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown"
+                                            style="background-color: #A51515">
+                                            <li><a class="nav-link active" href=./modalidades>Modalidades</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a class="nav-link active" href=./campeonatos>Campeonatos</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown"
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Gestão
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown"
+                                            style="background-color: #A51515">
+                                            <li><a class="nav-link active" href=./quem_somos>Quem
+                                                    somos</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a class="nav-link active" href=./como_participar>Faça
+                                                    parte</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                </ul>
+                                <div
+                                    style="display: flex;flex-direction: row;justify-content: center;align-items: center;margin:50px">
+                                    <a href="https://www.instagram.com/aaamat_imeusp/" target="_blank">
+                                        <img src="./img/instagram_vinho.svg" width="40px" style="margin: 10px;">
+                                    </a>
+                                    <a href="https://www.facebook.com/aaamat.ime/" target="_blank">
+                                        <img src="./img/facebook_vinho.svg" width="40px" style="margin: 10px;">
+                                    </a>
+                                    <a href="https://www.linkedin.com/company/aaamatimeusp/" target="_blank">
+                                        <img src="./img/linkedin_vinho.svg" width="40px" style="margin: 10px;">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+
+        </header>
+
+
+
+        <!-- AQUI FICARÁ O CONTEÚDO DA PÁGINA -->
+        <div class='b' style="display: flex;flex-direction:column; ">
+
+            <div
+                style="background-image: url(./img/campeonatos/banner-campeonatos.png); background-size: cover;background-position: center center ;display: flex;flex-direction: column;justify-content: center;align-items: center;padding: 30px 0 30px 0;text-shadow: 1px 1px 3px black;background-color: black;background-attachment: fixed;">
+
+
+                <h1 class="container"
+                    style="font-weight: bold;text-align: center;font-variant: small-caps; margin-top:0px">
+                    CAMPEONATOS
+                    <div class="d-flex justify-content-center" style="margin: 5px 0 10px 0;">
+                        <div
+                            style="height:7px;background-color:#A51515;width: 150px;box-shadow:1px 1px 2px rgba(0, 0, 0, 0.404)">
+                        </div>
+                    </div>
+                </h1>
+                <!-- Resumo -->
+                <p class="container" style="padding-bottom: 15px;text-align: center; font-weight: 600;">
+                    Quando pensamos em atlética, logo assimilamos com os campeonatos para a <a
+                        style="background-color: #A51515;text-shadow: none!important;">promoção
+                        dos
+                        esportes</a>
+                <p class="container" style="font-variant: small-caps; text-align: center;margin-bottom: 0!important;">A
+                    SEGUIR, CONFIRA OS
+                    PRINCIPAIS CAMPEONATOS QUE AS <a href="./modalidades" target="_blank"
+                        style="color: currentColor;">MODALIDADES</a> DA AAAMAT PARTICIPAM:
+                </p>
+                </p>
+
+
+            </div>
+
+            <!-- Conteúdo com os Eventos -->
+            <div class="container" style="padding-bottom: 30px;padding-top: 20px;">
+
+                <!-- BIFE -->
+                <div id="div-carousel-e-descricao-impar"
+                    style="display: flex;flex-direction: row;height: max-content;justify-content:space-between;align-items: center;">
+                    <div id="carossel-campeonatos" style="width: 48%;padding: 30px 30px 30px 0">
+                        <div id="carousel_bife_campeonatos" class="carousel slide carousel-fade" data-bs-ride="carousel"
+                            style="width: 100%;overflow: hidden;height: 100%;display: flex;justify-content: center;align-items: center;">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carousel_bife_campeonatos" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carousel_bife_campeonatos" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carousel_bife_campeonatos" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#carousel_bife_campeonatos" data-bs-slide-to="3"
+                                    aria-label="Slide 4"></button>
+                                <button type="button" data-bs-target="#carousel_bife_campeonatos" data-bs-slide-to="4"
+                                    aria-label="Slide 5"></button>
+                                <button type="button" data-bs-target="#carousel_bife_campeonatos" data-bs-slide-to="5"
+                                    aria-label="Slide 6"></button>
+                                <button type="button" data-bs-target="#carousel_bife_campeonatos" data-bs-slide-to="6"
+                                    aria-label="Slide 7"></button>
+                                <button type="button" data-bs-target="#carousel_bife_campeonatos" data-bs-slide-to="7"
+                                    aria-label="Slide 8"></button>
+                                <button type="button" data-bs-target="#carousel_bife_campeonatos" data-bs-slide-to="8"
+                                    aria-label="Slide 9"></button>
+                            </div>
+                            <div class="carousel-inner" style="display: flex;align-items: center;">
+                                <div class="carousel-item active">
+                                    <img src="./img/campeonatos/bife1.JPG" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./img/campeonatos/bife2.jpg" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./img/campeonatos/bife3.JPG" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./img/campeonatos/bife4.JPG" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./img/campeonatos/bife5.JPG" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./img/campeonatos/bife6.JPG" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./img/campeonatos/bife7.JPG" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./img/campeonatos/bife8.JPG" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./img/campeonatos/bife9.JPG" class="d-block w-100" alt="...">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carousel_bife_campeonatos" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carousel_bife_campeonatos" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="descricao-campeonatos" style="width: 50%;padding: 30px 0px 30px 0">
+                        <h4 style="border-left: 7px solid #A51515; padding-left: 7px;font-weight: 600;">
+                            BIFE
+                        </h4>
+                        <p style="text-align: justify; ">
+                            No ano de 1999, o jogo universitário mais amado, mais clamado e mais saudoso de toda a USP
+                            nascia: nosso querido BIFE! O BIFE é um campeonato universitário com mais de 10 atléticas
+                            que
+                            se reúnem todo ano para jogar muito esporte de qualidade e curtir aquela festa que só a
+                            Mimosa consegue fazer!
+                            Como funciona? Ocorre no segundo semestre do ano, geralmente no mês de novembro, no qual 2
+                            mil universitários são reunidos em uma cidade do interior de São
+                            Paulo. Lá a
+                            gente vive os melhores 4 dias do ano, jogando, torcendo, bebendo, curtindo. Além dos jogos,
+                            o BIFE conta com três <a href="./eventos" target="_blank"
+                                style="color: currentColor;">festas</a> noturnas que rolam depois dos jogos todos os
+                            dias. O IME é o maior campeão do BIFE, contando com 10
+                            vitórias, dentre as 20 edições ocorridas até 2019 e 1 título no E-BIFE II realizado em 2021:
+                            edição exclusivamente focada no e-sports por conta da fase pandêmica. Quer saber
+                            mais sobre?
+                            Acompanhe
+                            a <a href="https://www.instagram.com/bife.usp/" target="_blank"
+                                style="color: currentColor;">página oficial
+                                do BIFE</a>.
+                        </p>
+                    </div>
+                </div>
+
+                <hr
+                    style="height:1px;width:100% ;border-width:0;color:rgb(29, 29, 29);background-color:rgb(29, 29, 29); opacity: 70%;margin: 0 0 0 0;">
+
+                <!-- Copa USP -->
+                <div id="div-carousel-e-descricao-par"
+                    style="display: flex;flex-direction: row;height: max-content;justify-content:space-between;align-items: center;">
+                    <div id="descricao-campeonatos" style="width: 50%;padding: 30px 0px 30px 0">
+                        <h4
+                            style="border-right: 7px solid #A51515; padding-right: 7px;font-weight: 600; text-align: right;">
+                            Copa USP
+                        </h4>
+                        <p style="text-align: justify; text-align-last: right;">
+                            A Copa USP é um campeonato disputado por todas as faculdades da USP, realizado no primeiro
+                            semestre e organizado pela <a href="https://www.instagram.com/dino.laausp/"
+                                style="color:currentColor" target="_blank">LAAUSP</a> (Liga Atlética Acadêmica da USP).
+                            A Copa é dividida em duas séries: laranja (2ª Divisão) e azul (1ª Divisão). Em cada série,
+                            as equipes são divididas em grupos para a disputa da primeira fase e as mais bem
+                            classificadas avançam para o mata-mata das finais.
+                        </p>
+                    </div>
+                    <div id="carossel-campeonatos" style="width: 48%;padding: 30px 0px 30px 30px">
+                        <div id="carousel-copausp" class="carousel slide carousel-fade" data-bs-ride="carousel"
+                            style="width: 100%;overflow: hidden;height: 100%;display: flex;justify-content: center;align-items: center;">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carousel-copausp" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carousel-copausp" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carousel-copausp" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#carousel-copausp" data-bs-slide-to="3"
+                                    aria-label="Slide 4"></button>
+                                <button type="button" data-bs-target="#carousel-copausp" data-bs-slide-to="4"
+                                    aria-label="Slide 5"></button>
+                                <button type="button" data-bs-target="#carousel-copausp" data-bs-slide-to="5"
+                                    aria-label="Slide 6"></button>
+                                <button type="button" data-bs-target="#carousel-copausp" data-bs-slide-to="6"
+                                    aria-label="Slide 7"></button>
+                            </div>
+                            <div class="carousel-inner" style="display: flex;align-items: center;">
+                                <div class="carousel-item active">
+                                    <img src="./img/campeonatos/copausp1.jpg" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./img/campeonatos/copausp2.jpg" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./img/campeonatos/copausp3.jpg" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./img/campeonatos/copausp4.jpg" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./img/campeonatos/copausp5.jpg" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./img/campeonatos/copausp6.jpg" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./img/campeonatos/copausp7.jpg" class="d-block w-100" alt="...">
+                                </div>
+
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-copausp"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carousel-copausp"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <hr
+                    style="height:1px;width:100% ;border-width:0;color:rgb(29, 29, 29);background-color:rgb(29, 29, 29); opacity: 70%;margin: 0 0 0 0;">
+
+                <!-- BichUSP -->
+                <div id="div-carousel-e-descricao-impar"
+                    style="display: flex;flex-direction: row;height: max-content;justify-content:space-between;align-items: center;">
+                    <div id="carossel-campeonatos" style="width: 48%;padding: 30px 30px 30px 0">
+                        <div id="carousel-bichusp" class="carousel slide carousel-fade" data-bs-ride="carousel"
+                            style="width: 100%;overflow: hidden;height: 100%;display: flex;justify-content: center;align-items: center;">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carousel-bichusp" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carousel-bichusp" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carousel-bichusp" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#carousel-bichusp" data-bs-slide-to="3"
+                                    aria-label="Slide 4"></button>
+                                <button type="button" data-bs-target="#carousel-bichusp" data-bs-slide-to="4"
+                                    aria-label="Slide 5"></button>
+                                <button type="button" data-bs-target="#carousel-bichusp" data-bs-slide-to="5"
+                                    aria-label="Slide 6"></button>
+                            </div>
+                            <div class="carousel-inner" style="display: flex;align-items: center;">
+                                <div class="carousel-item active">
+                                    <img src="./img/campeonatos/bichusp1.jpg" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./img/campeonatos/bichusp2.jpg" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./img/campeonatos/bichusp3.jpg" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./img/campeonatos/bichusp4.jpg" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./img/campeonatos/bichusp5.jpg" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./img/campeonatos/bichusp6.jpg" class="d-block w-100" alt="...">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-bichusp"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carousel-bichusp"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="descricao-campeonatos" style="width: 50%;padding: 30px 0px 30px 0">
+                        <h4 style="border-left: 7px solid #A51515; padding-left: 7px;font-weight: 600;">
+                            BICHUSP
+                        </h4>
+                        <p style="text-align: justify;">
+                            O Bichusp é um campeonato entre os bixes de todas as faculdades da USP organizado pela
+                            LAAUSP e realizado no CEPEUSP
+                            (Centro de Práticas Esportivas da Universidade de São Paulo)
+                            nos finais de semana do mês de março, uma semana após o ingresso dos caloures. Duas
+                            modalidades são disputadas a cada semana,
+                            alternando os naipes.
+                            Devido ao nível técnico das equipes que nunca treinaram juntas e à quantidade de torcedores
+                            que marcam presença no CEPEUSP, é um dos campeonatos mais divertidos do cenário esportivo
+                            universitário.
+                        </p>
+                    </div>
+                </div>
+
+                <hr
+                    style="height:1px;width:100% ;border-width:0;color:rgb(29, 29, 29);background-color:rgb(29, 29, 29); opacity: 70%;margin: 0 0 0 0;">
+
+                <!-- Jogos da Liga -->
+                <div id="div-carousel-e-descricao-par"
+                    style="display: flex;flex-direction: row;height: max-content;justify-content:space-between;align-items: center;">
+                    <div id="descricao-campeonatos" style="width: 50%;padding: 30px 0px 30px 0">
+                        <h4
+                            style="border-right: 7px solid #A51515; padding-right: 7px;font-weight: 600; text-align: right;">
+                            Jogos da Liga
+                        </h4>
+                        <p style="text-align: justify; text-align-last: right;">
+                            Outro campeonato organizado pela LAAUSP (Liga Atlética Acadêmica da USP), é realizado no
+                            segundo semestre e disputado entre todas as faculdades da USP. Não há separação das equipes
+                            em
+                            divisões, o que possibilita disputas entre equipes de níveis técnicos diversos.
+                            O vencedor da Copa USP enfrenta o vencedor dos Jogos da Liga em uma partida (Copa dos
+                            Campeões).
+                        </p>
+                    </div>
+                    <div id="carossel-campeonatos" style="width: 48%;padding: 30px 0px 30px 30px">
+                        <img src="./img/campeonatos/jogosdaliga.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+
+                <hr
+                    style="height:1px;width:100% ;border-width:0;color:rgb(29, 29, 29);background-color:rgb(29, 29, 29); opacity: 70%;margin: 0 0 0 0;">
+
+                <!-- InterIME -->
+                <div id="div-carousel-e-descricao-impar"
+                    style="display: flex;flex-direction: row;height: max-content;justify-content:space-between;align-items: center;">
+                    <div id="carossel-campeonatos" style="width: 48%;padding: 30px 30px 30px 0">
+                        <div id="carousel-interime" class="carousel slide carousel-fade" data-bs-ride="carousel"
+                            style="width: 100%;overflow: hidden;height: 100%;display: flex;justify-content: center;align-items: center;">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carousel-interime" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carousel-interime" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carousel-interime" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#carousel-interime" data-bs-slide-to="3"
+                                    aria-label="Slide 4"></button>
+                                <button type="button" data-bs-target="#carousel-interime" data-bs-slide-to="4"
+                                    aria-label="Slide 5"></button>
+                                <button type="button" data-bs-target="#carousel-interime" data-bs-slide-to="5"
+                                    aria-label="Slide 6"></button>
+                            </div>
+                            <div class="carousel-inner" style="display: flex;align-items: center;">
+                                <div class="carousel-item active">
+                                    <img src="./img/campeonatos/interime1.JPG" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./img/campeonatos/interime2.JPG" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./img/campeonatos/interime3.JPG" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./img/campeonatos/interime4.JPG" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./img/campeonatos/interime5.JPG" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./img/campeonatos/interime6.JPG" class="d-block w-100" alt="...">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-interime"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carousel-interime"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="descricao-campeonatos" style="width: 50%;padding: 30px 0px 30px 0">
+                        <h4 style="border-left: 7px solid #A51515; padding-left: 7px;font-weight: 600;">
+                            INTERIME
+                        </h4>
+                        <p style="text-align: justify;">
+                            O InterIME é um campeonato exclusivo para os alunos do IME e tem como objetivo maior a
+                            integração e diversão. Todos podem competir nele em qualquer modalidade mesmo sem nunca ter
+                            treinado. Os alunos se inscrevem e são divididos em duas equipes aleatoriamente, e os jogos
+                            geralmente acontecem em um final de semana no CEPE, com direito a mimos de premiação.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <!-- RODAPÉ -->
+        <footer>
+            <div id="general_infos">
+                <div id="logo-imeusp">
+                    <a href="https://www.ime.usp.br/" target="_blank" title="IME-USP Home" alt="IME-USP Logo">
+                        <img id="img_logo-imeusp" src="./img/ime_usp.svg" style="height: 90px;">
+                    </a>
+                </div>
+
+                <div id="nome_localizacao"
+                    style="max-height: 90px;overflow-x: scroll; padding: 5px 5px 5px 10px;flex-grow: 2;">
+                    <p id="nome_social_aaamat" style="font-weight:700; background-color: transparent;color: #0a0a0a;margin: 5px 0 4px 0; font-size: 14px;text-align: center;line-height: 15px;
+                        ">
+                        Associação
+                        Atlética
+                        Acadêmica da
+                        Matemática (AAAMAT)</p>
+                    <p id="nome_ime"
+                        style="font-weight:600; background-color: transparent;color: #0a0a0a; font-size: 14px; line-height: 15px;text-align: center;margin-bottom: 10px;">
+                        Instituto
+                        de
+                        Matemática e
+                        Estatística - USP</p>
+                    <hr id="divisor_nome_localizacao"
+                        style="height:2px;width:100% ;border-width:0;color:rgb(61, 61, 61);background-color:rgb(61, 61, 61); opacity: 10%;margin: 0 0 2px 0;">
+
+                    <div
+                        style="background-color: transparent;display:flex;justify-content: center;vertical-align: middle;font-size: 13px;">
+
+                        <div id="localizacao_rodape"
+                            style="background-color: transparent;justify-content: center;vertical-align: middle;font-size: 13px;">
+
+                            <img id="icon_local" src="./img/geo-alt.svg"
+                                style="background-color: transparent;height: 14px;width: 14px;margin: 0px 2px 0 0;">
+                            <p id="asaada"
+                                style="display: inline-block;font-weight: 400; margin: 2px 2px 0 0; background-color: transparent; color: #0a0a0a;">
+                                Localização: </p>
+                            <p
+                                style="display: inline-block;font-weight: 300; margin: 2px 0 0 0; background-color: transparent; color: #0a0a0a">
+                                Rua do Matão, 1010 — Butantã, São
+                                Paulo
+                                - SP, 05508-120</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="redes-sociais"
+                    style="display: flex; flex-direction: row; justify-content: space-between;padding: 0px;">
+                    <a href="https://www.instagram.com/aaamat_imeusp/" target="_blank"
+                        style="background-color: transparent;">
+                        <img id="insta_logo" src="./img/instagram.svg"
+                            style="height: 35px;margin: 15px 5px 5px 5px;background-color: transparent;">
+                    </a>
+                    <a href="https://www.facebook.com/aaamat.ime/" target="_blank"
+                        style="background-color: transparent;">
+                        <img id="face_logo" src="./img/facebook.svg"
+                            style="height: 35px;margin: 15px 5px 5px 5px;background-color: transparent;">
+                    </a>
+                    <a href="https://www.linkedin.com/company/aaamatimeusp/" target="_blank"
+                        style="background-color: transparent;">
+                        <img id="linkedin_logo" src="./img/linkedin.svg"
+                            style="height: 35px;margin: 15px 10px 5px 5px;background-color: transparent;">
+                    </a>
+                </div>
+            </div>
+
+            <div class='c' style="font-size: 12px;">
+                &copy;
+                <script type="text/javascript">document.write(new Date().getFullYear());</script> Atlética
+                Matemática
+                USP
+            </div>
+            <div class="c" style="margin: 0;padding: 0;">
+                <hr
+                    style="height:0.5px;width:100% ;border-width:0;color:rgb(61, 61, 61);background-color:rgb(61, 61, 61); opacity: 10%;margin: 0;">
+                <p
+                    style="box-shadow:0 0 5px 2px #0a0a0a;background-color: #0c0c0c;font-weight: 300 italic; color: rgb(61, 61, 61); text-align: right; padding-right: 0.5%; font-size: 8px; margin:0;opacity: 30%">
+                    Site e Design criados por Bruno Groper Morbin & Luiz Carlos</p>
+            </div>
+
+        </footer>
+    </div>
+</body>
+
+</html>
+
+
+<style>
+    @media(max-width: 780px) {
+        #div-carousel-e-descricao-impar {
+            flex-direction: column !important;
+            justify-content: center !important;
+        }
+
+        #div-carousel-e-descricao-par {
+            flex-direction: column-reverse !important;
+            justify-content: center !important;
+        }
+
+        #carossel-campeonatos {
+            width: 100% !important;
+            padding: 30px 0 0 0 !important;
+        }
+
+        #descricao-campeonatos {
+            width: 100% !important;
+            padding: 15px 0 30px 0 !important;
+        }
+    }
+</style>

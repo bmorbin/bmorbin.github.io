@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="shortcut icon" type="image/ico" href="./img/favicon.ico" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Faça parte - AAAMAT</title>
+</head>
+
+<!-- https://tutorialdeep.com/knowhow/show-hide-div-on-scroll-jquery/ -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    $(window).scroll(function () {
+        if ($(this).width() > 670) {
+            if ($(this).scrollTop() > 75) {
+                $('.logo_aaamat').fadeOut();
+                document.getElementById("home_header").style.color = "white";
+            }
+            else {
+                $('.logo_aaamat').fadeIn();
+                document.getElementById("home_header").style.color = "#A51515";
+            }
+        }
+        else {
+            if ($(this).scrollTop() > 50) {
+                $('.logo_aaamat').fadeOut();
+                document.getElementById("logo_aaamat_navbar").style.visibility = "visible";
+            }
+            else {
+                $('.logo_aaamat').fadeIn();
+                document.getElementById("logo_aaamat_navbar").style.visibility = "hidden";
+            }
+        }
+
+
+    });
+</script>
+
+
+
+<body>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <div style="background-color: #3A000E;">
+
+        <!-- CABEÇALHO -->
+        <header>
+            <img class="logo_aaamat" src="./img/logoaaamat.svg" alt="Logo AAAMAT" title="Home">
+            <a class="logo_aaamat" href=./home alt="Logo AAAMAT" title="Home"></a>
+            <div class='z'></div>
+            <div class='a'>
+                <a href="./historia">História</a>
+                <div id="gestao_toggle" style="background-color: #A51515">
+                    <p id="gestao_header" style="cursor: default;" tabindex="0">Gestão
+                        &#9662;</p>
+                    <a id="quem_somos_header" href="./quem_somos" tabindex="-1">Quem
+                        somos</a>
+                    <a id="como_participar_header" href="./como_participar" tabindex="-1">
+                        Faça parte</a>
+                </div>
+                <a href="./lojinha">Lojinha</a>
+                <a href="./home" id="home_header" style="color: #A51515;">Home</a>
+                <div id="esportivo_toggle" style="background-color: #A51515">
+                    <p id="esportivo_header" style="cursor: default;" tabindex="0">Esportivo
+                        &#9662;</p>
+                    <a href="./modalidades" id="modalidades_header" tabindex="-1">Modalidades</a>
+                    <a href="./campeonatos" id="campeonatos_header" tabindex="-1">
+                        Campeonatos</a>
+                </div>
+                <a href="./eventos">Eventos</a>
+                <a href="./contato">Contato</a>
+            </div>
+
+            <div class="a_responsivo">
+                <nav class="navbar navbar-dark " style="padding:0;margin:0;position: unset;width: 100%;">
+                    <div class="container-fluid">
+                        <a id="logo_aaamat_navbar" class="navbar-brand" href=./home
+                            style="display:flex;align-items:center">
+                            <img src="./img/aaamat.svg" alt="AAAMAT" title="Home" style="height: 20px">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                            aria-labelledby="offcanvasNavbarLabel" style="background-color: #A51515;border-left: none;">
+                            <div class="offcanvas-header">
+                                <img class="offcanvas-title" id="offcanvasNavbarLabel" src="./img/aaamat.svg"
+                                    width="35%">
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href=./home>Home</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href=./contato>Contato</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href=./historia>História</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href=./lojinha>Lojinha</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href=./eventos>Eventos</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="nav-item dropdown center">
+                                        <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown"
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Esportivo
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown"
+                                            style="background-color: #A51515">
+                                            <li><a class="nav-link active" href=./modalidades>Modalidades</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a class="nav-link active" href=./campeonatos>Campeonatos</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown"
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Gestão
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown"
+                                            style="background-color: #A51515">
+                                            <li><a class="nav-link active" href=./quem_somos>Quem
+                                                    somos</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a class="nav-link active" href=./como_participar>Faça
+                                                    parte</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                </ul>
+                                <div
+                                    style="display: flex;flex-direction: row;justify-content: center;align-items: center;margin:50px">
+                                    <a href="https://www.instagram.com/aaamat_imeusp/" target="_blank">
+                                        <img src="./img/instagram_vinho.svg" width="40px" style="margin: 10px;">
+                                    </a>
+                                    <a href="https://www.facebook.com/aaamat.ime/" target="_blank">
+                                        <img src="./img/facebook_vinho.svg" width="40px" style="margin: 10px;">
+                                    </a>
+                                    <a href="https://www.linkedin.com/company/aaamatimeusp/" target="_blank">
+                                        <img src="./img/linkedin_vinho.svg" width="40px" style="margin: 10px;">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+
+        </header>
+
+
+
+        <!-- AQUI FICARÁ O CONTEÚDO DA PÁGINA -->
+        <div class='b' style="display: flex;flex-direction:column;">
+
+            <div class="container">
+
+                <h1 style="font-weight: bold;text-align: center;font-variant: small-caps; margin-top:15px">FAÇA PARTE!
+                </h1>
+
+                <div class="d-flex justify-content-center" style="margin: 5px 0 10px 0;">
+                    <div style="height:7px;background-color:#A51515;width: 125px;"></div>
+                </div>
+
+                <p style="margin-top: 15px;text-align: center;">
+                    Qualquer alune do IME pode participar de algum time ou integrar a gestão da atlética.<br><br>
+                    <!-- <p style="font-variant: small-caps;text-align: center;">CLIQUE EM UM DOS BOTÕES LOGO ABAIXO PARA SER
+                    REDIRECIONADO À PÁGINA CONTENDO O
+                    CONTATO DE QUEM POSSA TE AJUDAR:</p> -->
+                </p>
+
+
+                <div id="div_faca_parte_blocos"
+                    style="display: grid;grid-template-columns: 1fr 1fr;grid-template-areas: 'a b';height: max-content;">
+                    <div id="div_faca_parte_gestao_botao"
+                        style="grid-area: a;padding:0 10px 0 0px;display: flex;justify-content: end;">
+                        <a id="faca_parte_gestao_botao" href="./contato"
+                            style="text-decoration: none;box-shadow:1px 1px 3px black;text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.418);border-radius: 10px!important;display: flex;flex-direction: column;justify-content:start ;align-items: center;padding:10px;margin:0;background-color: #A51515;height:100%;width: 100%;max-width: 300px">
+                            <div
+                                style="box-shadow:1px 1px 2px rgba(0, 0, 0, 0.514);background-color: #3A000E; width: 60px;height: 60px; padding:15px;border-radius: 50%;margin:10px 10px 0 10px ;">
+                                <svg id="engrenagem" xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                    fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z" />
+                                    <path
+                                        d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z" />
+                                </svg>
+                            </div>
+                            <p
+                                style="font-variant: small-caps;text-align: center;font-weight: 800;margin: 10px 10px 0 10px;">
+                                FAÇA PARTE
+                                DA GESTÃO
+                            </p>
+                            <p style="margin: 0px 10px 10px 10px;text-align: center;">Clique aqui para saber como
+                                contatar a
+                                atlética</p>
+                        </a>
+                    </div>
+                    <div id="div_faca_parte_time_botao" style="grid-area: b;padding:0 0 0 10px">
+                        <a id="faca_parte_time_botao" href="./modalidades"
+                            style="text-decoration: none;box-shadow:1px 1px 3px black;text-shadow:1px 1px 2px rgba(0, 0, 0, 0.514);border-radius: 10px!important;display: flex;flex-direction: column;justify-content:start ;align-items: center;padding:10px;margin:0;background-color: #3A000E;height: 100%;width: 100%;max-width: 300px;">
+                            <div
+                                style="box-shadow:1px 1px 2px rgba(0, 0, 0, 0.514);background-color: #A51515; width: 60px;height: 60px; padding:15px;border-radius: 50%;margin:10px 10px 0 10px ;">
+                                <svg id="trofeu-sem-preenchimento" xmlns="http://www.w3.org/2000/svg" width="30"
+                                    height="30" fill="currentColor" class="bi bi-trophy" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5c0 .538-.012 1.05-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33.076 33.076 0 0 1 2.5.5zm.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935zm10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935zM3.504 1c.007.517.026 1.006.056 1.469.13 2.028.457 3.546.87 4.667C5.294 9.48 6.484 10 7 10a.5.5 0 0 1 .5.5v2.61a1 1 0 0 1-.757.97l-1.426.356a.5.5 0 0 0-.179.085L4.5 15h7l-.638-.479a.501.501 0 0 0-.18-.085l-1.425-.356a1 1 0 0 1-.757-.97V10.5A.5.5 0 0 1 9 10c.516 0 1.706-.52 2.57-2.864.413-1.12.74-2.64.87-4.667.03-.463.049-.952.056-1.469H3.504z" />
+                                </svg>
+                                <svg id="trofeu-com-preenchimento" style="display: none;"
+                                    xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                    class="bi bi-trophy-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5c0 .538-.012 1.05-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33.076 33.076 0 0 1 2.5.5zm.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935zm10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935z" />
+                                </svg>
+                            </div>
+                            <p
+                                style="font-variant: small-caps;text-align: center;font-weight: 800;margin: 10px 10px 0 10px;">
+                                SEJA UM ATLETA
+                            </p>
+                            <p style="margin: 0px 10px 10px 10px;text-align: center;">Clique aqui para encontrar o
+                                contato
+                                do
+                                diretor da
+                                modalidade</p>
+                        </a>
+                    </div>
+                </div>
+
+                <hr
+                    style="height:2px;width:100% ;border-width:0;color:rgb(29, 29, 29);background-color:rgb(29, 29, 29); opacity: 70%;margin: 30px 0 0 0;">
+
+                <h3
+                    style="font-weight: bold;text-align: center;font-variant: small-caps; margin-top:30px;margin-bottom: 30px;color: #A51515;">
+                    SAIBA MAIS
+                    SOBRE CADA CARGO DA GESTÃO:</h3>
+
+                <div style="display: inline-flex;width: 100%;flex-direction: row;flex-wrap: wrap;padding-bottom:50px">
+                    <!-- ARTE -->
+                    <div id="box_cargo_gestao" class="impar primeira-box">
+                        <img src="./img/cargos/arte.svg" style="max-width:70px; max-height:70px;margin-bottom: 5px;"
+                            height="100%" width="100%">
+                        <div style="display: flex;flex-direction: row;align-items: flex-start;">
+                            <div id="seta-cargo">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                                </svg>
+                            </div>
+                            <div>
+
+                                <p style="margin:0">
+                                <p style="font-weight: bold;margin:0">
+                                    <a style="background-color: #A51515;">ARTE:</a>
+                                </p>
+                                Os responsáveis por este cargo produzem posts para as redes sociais e desenvolvem
+                                layouts para os produtos vendidos pela atlética.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- COBIFE -->
+                    <div id="box_cargo_gestao" class="par">
+                        <img src="./img/cargos/cobife.svg" style="max-width:70px; max-height:70px;margin-bottom: 5px;"
+                            height="100%" width="100%">
+                        <div style="display: flex;flex-direction: row;align-items: flex-start;">
+                            <div id="seta-cargo">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                                </svg>
+                            </div>
+
+                            <div>
+                                <p style="margin:0;">
+                                <p style="font-weight: bold;margin:0">
+                                    <a style="background-color: #A51515;">C.O. BIFE:</a>
+                                </p>
+                                Comissão responsável por organizar o inter BIFE, composta por C.O. Esportiva, C.O.
+                                Balada e CAO (Comissão Antiopressão). Ainda não conhece o BIFE? É um inter que ocorre em
+                                cidades do interior de São Paulo envolvendo <a
+                                    style="color: currentColor;text-decoration: underline;" href="./eventos"
+                                    target="_blank">festas</a> e <a
+                                    style="color: currentColor;text-decoration: underline;" href="./campeonatos"
+                                    target="_blank">jogos</a>.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- COMUNICAS -->
+                    <div id="box_cargo_gestao" class="impar">
+                        <img src="./img/cargos/comunicas.svg"
+                            style="max-width:70px; max-height:70px;margin-bottom: 5px;" height="100%" width="100%">
+                        <div style="display: flex;flex-direction: row;align-items: flex-start;">
+                            <div id="seta-cargo">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                                </svg>
+                            </div>
+
+
+                            <div>
+                                <p style="margin:0;">
+                                <p style="font-weight: bold;margin:0">
+                                    <a style="background-color: #A51515;">COMUNICAS:</a>
+                                </p>
+                                Cuidam de toda a comunicação nas redes sociais, buscando aumentar o engajamento em
+                                conjunto
+                                com o setor das artes. Já aproveitando, siga nossa página do <a
+                                    style="color: currentColor;text-decoration: underline;"
+                                    href="https://www.instagram.com/aaamat_imeusp/" target="_blank">Instagram</a> e do
+                                <a style="color: currentColor;text-decoration: underline;"
+                                    href="https://www.facebook.com/aaamat.ime/" target="_blank">Facebook</a> para não
+                                perder
+                                nada!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DGE -->
+                    <div id="box_cargo_gestao" class="par">
+                        <img src="./img/cargos/dge.svg" style="max-width:70px; max-height:70px;margin-bottom: 5px;"
+                            height="100%" width="100%">
+                        <div style="display: flex;flex-direction: row;align-items: flex-start;">
+                            <div id="seta-cargo">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p style="margin:0;">
+                                <p style="font-weight: bold;margin:0">
+                                    <a style="background-color: #A51515;">Diretor Geral de Esportes:</a>
+                                </p>
+                                Atendem às necessidades das equipes e participam de reuniões com outras atléticas para
+                                organizar campeonatos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- EVENTOS -->
+                    <div id="box_cargo_gestao" class="impar">
+                        <img src="./img/cargos/eventos.svg" style="max-width:70px; max-height:70px;margin-bottom: 5px;"
+                            height="100%" width="100%">
+                        <div style="display: flex;flex-direction: row;align-items: flex-start;">
+                            <div id="seta-cargo">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                                </svg>
+                            </div>
+
+
+                            <div>
+                                <p style="margin:0;">
+                                <p style="font-weight: bold;margin:0">
+                                    <a style="background-color: #A51515;">EVENTOS:</a>
+                                </p>
+                                Responsáveis por cuidar de eventos e festas, como I Will SurvIME, junIME, FisIME, entre
+                                outras.
+                                Confira os principais eventos promovidos pela AAAMAT <a
+                                    style="color: currentColor;text-decoration: underline;" href="./eventos"
+                                    target="_blank">aqui</a>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Presidente -->
+                    <div id="box_cargo_gestao" class="par">
+                        <img src="./img/cargos/presidente.svg"
+                            style="max-width:70px; max-height:70px;margin-bottom: 5px;" height="100%" width="100%">
+                        <div style="display: flex;flex-direction: row;align-items: flex-start;">
+                            <div id="seta-cargo">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                                </svg>
+                            </div>
+
+
+                            <div>
+                                <p style="margin:0;">
+                                <p style="font-weight: bold;margin:0">
+                                    <a style="background-color: #A51515;">PRESIDENTE:</a>
+                                </p>
+                                Responsável por coordenar todas as outras diretorias, isto é, responsável por
+                                centralizar a
+                                liderança da entidade.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Secretaria -->
+                    <div id="box_cargo_gestao" class="impar">
+                        <img src="./img/cargos/secretaria.svg"
+                            style="max-width:70px; max-height:70px;margin-bottom: 5px;" height="100%" width="100%">
+                        <div style="display: flex;flex-direction: row;align-items: flex-start;">
+                            <div id="seta-cargo">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                                </svg>
+                            </div>
+
+
+                            <div>
+                                <p style="margin:0;">
+                                <p style="font-weight: bold;margin:0">
+                                    <a style="background-color: #A51515;">SECRETARIA:</a>
+                                </p>
+                                Responsáveis por organizar documentos da gestão, realizar as convocações de reuniões,
+                                montar
+                                as atas e outras burocracias.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tesouro -->
+                    <div id="box_cargo_gestao" class="par">
+                        <img src="./img/cargos/tesouraria.svg"
+                            style="max-width:70px; max-height:70px;margin-bottom: 5px;" height="100%" width="100%">
+                        <div style="display: flex;flex-direction: row;align-items: flex-start;">
+                            <div id="seta-cargo">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                                </svg>
+                            </div>
+
+
+                            <div>
+                                <p style="margin:0;">
+                                <p style="font-weight: bold;margin:0">
+                                    <a style="background-color: #A51515;">TESOURARIA:</a>
+                                </p>
+                                Responsáveis pelo planejamento financeiro, emissão de notas e monitoramento da saúde
+                                financeira da atlética.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vendas -->
+                    <div id="box_cargo_gestao" class="impar">
+                        <img src="./img/cargos/vendas.svg" style="max-width:70px; max-height:70px;margin-bottom: 5px;"
+                            height="100%" width="100%">
+                        <div style="display: flex;flex-direction: row;align-items: flex-start;">
+                            <div id="seta-cargo">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                                </svg>
+                            </div>
+
+
+                            <div>
+                                <p style="margin:0;">
+                                <p style="font-weight: bold;margin:0">
+                                    <a style="background-color: #A51515;">VENDAS:</a>
+                                </p>
+                                Este cargo fica responsável em criar novos produtos, realizar encomendas, organizar
+                                stands,
+                                ir atrás de fornecedores e coisas do tipo. Confira a página <a
+                                    style="color: currentColor;text-decoration: underline;" href="./lojinha"
+                                    target="_blank">Lojinha</a> para mais detalhes.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Vice-Presidente -->
+                    <div id="box_cargo_gestao" class="par">
+                        <img src="./img/cargos/vice.svg" style="max-width:70px; max-height:70px;margin-bottom: 5px;"
+                            height="100%" width="100%">
+                        <div style="display: flex;flex-direction: row;align-items: flex-start;">
+                            <div id="seta-cargo">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                                </svg>
+                            </div>
+
+
+                            <div>
+                                <p style="margin:0;">
+                                <p style="font-weight: bold;margin:0">
+                                    <a style="background-color: #A51515;">VICE-PRESIDENTE:</a>
+                                </p>
+                                Apresenta as mesmas responsabilidades da presidente e é o braço direito dela.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <!-- RODAPÉ -->
+        <footer>
+            <div id="general_infos">
+                <div id="logo-imeusp">
+                    <a href="https://www.ime.usp.br/" target="_blank" title="IME-USP Home" alt="IME-USP Logo">
+                        <img id="img_logo-imeusp" src="./img/ime_usp.svg" style="height: 90px;">
+                    </a>
+                </div>
+
+                <div id="nome_localizacao"
+                    style="max-height: 90px;overflow-x: scroll; padding: 5px 5px 5px 10px;flex-grow: 2;">
+                    <p id="nome_social_aaamat" style="font-weight:700; background-color: transparent;color: #0a0a0a;margin: 5px 0 4px 0; font-size: 14px;text-align: center;line-height: 15px;
+                        ">
+                        Associação
+                        Atlética
+                        Acadêmica da
+                        Matemática (AAAMAT)</p>
+                    <p id="nome_ime"
+                        style="font-weight:600; background-color: transparent;color: #0a0a0a; font-size: 14px; line-height: 15px;text-align: center;margin-bottom: 10px;">
+                        Instituto
+                        de
+                        Matemática e
+                        Estatística - USP</p>
+                    <hr id="divisor_nome_localizacao"
+                        style="height:2px;width:100% ;border-width:0;color:rgb(61, 61, 61);background-color:rgb(61, 61, 61); opacity: 10%;margin: 0 0 2px 0;">
+
+                    <div
+                        style="background-color: transparent;display:flex;justify-content: center;vertical-align: middle;font-size: 13px;">
+
+                        <div id="localizacao_rodape"
+                            style="background-color: transparent;justify-content: center;vertical-align: middle;font-size: 13px;">
+
+                            <img id="icon_local" src="./img/geo-alt.svg"
+                                style="background-color: transparent;height: 14px;width: 14px;margin: 0px 2px 0 0;">
+                            <p id="asaada"
+                                style="display: inline-block;font-weight: 400; margin: 2px 2px 0 0; background-color: transparent; color: #0a0a0a;">
+                                Localização: </p>
+                            <p
+                                style="display: inline-block;font-weight: 300; margin: 2px 0 0 0; background-color: transparent; color: #0a0a0a">
+                                Rua do Matão, 1010 — Butantã, São
+                                Paulo
+                                - SP, 05508-120</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="redes-sociais"
+                    style="display: flex; flex-direction: row; justify-content: space-between;padding: 0px;">
+                    <a href="https://www.instagram.com/aaamat_imeusp/" target="_blank"
+                        style="background-color: transparent;">
+                        <img id="insta_logo" src="./img/instagram.svg"
+                            style="height: 35px;margin: 15px 5px 5px 5px;background-color: transparent;">
+                    </a>
+                    <a href="https://www.facebook.com/aaamat.ime/" target="_blank"
+                        style="background-color: transparent;">
+                        <img id="face_logo" src="./img/facebook.svg"
+                            style="height: 35px;margin: 15px 5px 5px 5px;background-color: transparent;">
+                    </a>
+                    <a href="https://www.linkedin.com/company/aaamatimeusp/" target="_blank"
+                        style="background-color: transparent;">
+                        <img id="linkedin_logo" src="./img/linkedin.svg"
+                            style="height: 35px;margin: 15px 10px 5px 5px;background-color: transparent;">
+                    </a>
+                </div>
+            </div>
+
+            <div class='c' style="font-size: 12px;">
+                &copy;
+                <script type="text/javascript">document.write(new Date().getFullYear());</script> Atlética
+                Matemática
+                USP
+            </div>
+            <div class="c" style="margin: 0;padding: 0;">
+                <hr
+                    style="height:0.5px;width:100% ;border-width:0;color:rgb(61, 61, 61);background-color:rgb(61, 61, 61); opacity: 10%;margin: 0;">
+                <p
+                    style="box-shadow:0 0 5px 2px #0a0a0a;background-color: #0c0c0c;font-weight: 300 italic; color: rgb(61, 61, 61); text-align: right; padding-right: 0.5%; font-size: 8px; margin:0;opacity: 30%">
+                    Site e Design criados por Bruno Groper Morbin & Luiz Carlos</p>
+            </div>
+
+        </footer>
+    </div>
+</body>
+
+</html>
+
+<style>
+    #box_cargo_gestao {
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        padding: 20px;
+    }
+
+    #faca_parte_gestao_botao:hover,
+    #faca_parte_gestao_botao:active {
+        cursor: pointer;
+        box-shadow: 0px 0px 3px #A51515 !important;
+        transform: scale(1.01);
+    }
+
+    #faca_parte_time_botao:hover,
+    #faca_parte_time_botao:active {
+        cursor: pointer;
+        box-shadow: 0px 0px 3px #3A000E !important;
+        transform: scale(1.01);
+    }
+
+    #faca_parte_time_botao:hover #trofeu-com-preenchimento,
+    #faca_parte_time_botao:active #trofeu-com-preenchimento {
+        display: flex !important;
+        filter: drop-shadow(0px 0px 1px white);
+    }
+
+    #faca_parte_time_botao:hover #trofeu-sem-preenchimento,
+    #faca_parte_time_botao:active #trofeu-sem-preenchimento {
+        display: none !important;
+    }
+
+    #faca_parte_gestao_botao:hover #engrenagem,
+    #faca_parte_gestao_botao:active #engrenagem {
+        transform: rotate(180deg);
+        transition: 3s;
+        filter: drop-shadow(0px 0px .5px white);
+    }
+
+    @media(max-width:290px) {
+        #div_faca_parte_blocos {
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            align-items: center !important;
+        }
+
+        #div_faca_parte_time_botao {
+            padding: 10px 0 0 0 !important;
+        }
+
+        #div_faca_parte_gestao_botao {
+            padding: 0 0 10px 0 !important;
+        }
+
+    }
+
+    @media(max-width:780px) {
+        #box_cargo_gestao {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding-bottom: 10px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 2px dotted darkred;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        #seta-cargo {
+            display: none;
+        }
+
+        .primeira-box {
+            border-top: 2px dotted darkred;
+        }
+
+    }
+</style>

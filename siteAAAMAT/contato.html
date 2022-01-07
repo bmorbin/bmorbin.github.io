@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="shortcut icon" type="image/ico" href="./img/favicon.ico" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Contato - AAAMAT</title>
+</head>
+
+<!-- https://tutorialdeep.com/knowhow/show-hide-div-on-scroll-jquery/ -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    $(window).scroll(function () {
+        if ($(this).width() > 670) {
+            if ($(this).scrollTop() > 75) {
+                $('.logo_aaamat').fadeOut();
+                document.getElementById("home_header").style.color = "white";
+            }
+            else {
+                $('.logo_aaamat').fadeIn();
+                document.getElementById("home_header").style.color = "#A51515";
+            }
+        }
+        else {
+            if ($(this).scrollTop() > 50) {
+                $('.logo_aaamat').fadeOut();
+                document.getElementById("logo_aaamat_navbar").style.visibility = "visible";
+            }
+            else {
+                $('.logo_aaamat').fadeIn();
+                document.getElementById("logo_aaamat_navbar").style.visibility = "hidden";
+            }
+        }
+
+
+    });
+</script>
+
+
+
+<body>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <div style="background-color: #3A000E;">
+
+        <!-- CABEÇALHO -->
+        <header>
+            <img class="logo_aaamat" src="./img/logoaaamat.svg" alt="Logo AAAMAT" title="Home">
+            <a class="logo_aaamat" href=./home alt="Logo AAAMAT" title="Home"></a>
+            <div class='z'></div>
+            <div class='a'>
+                <a href="./historia">História</a>
+                <div id="gestao_toggle" style="background-color: #A51515">
+                    <p id="gestao_header" style="cursor: default;" tabindex="0">Gestão
+                        &#9662;</p>
+                    <a id="quem_somos_header" href="./quem_somos" tabindex="-1">Quem
+                        somos</a>
+                    <a id="como_participar_header" href="./como_participar" tabindex="-1">
+                        Faça parte</a>
+                </div>
+                <a href="./lojinha">Lojinha</a>
+                <a href="./home" id="home_header" style="color: #A51515;">Home</a>
+                <div id="esportivo_toggle" style="background-color: #A51515">
+                    <p id="esportivo_header" style="cursor: default;" tabindex="0">Esportivo
+                        &#9662;</p>
+                    <a href="./modalidades" id="modalidades_header" tabindex="-1">Modalidades</a>
+                    <a href="./campeonatos" id="campeonatos_header" tabindex="-1">
+                        Campeonatos</a>
+                </div>
+                <a href="./eventos">Eventos</a>
+                <a href="./contato">Contato</a>
+            </div>
+
+            <div class="a_responsivo">
+                <nav class="navbar navbar-dark " style="padding:0;margin:0;position: unset;width: 100%;">
+                    <div class="container-fluid">
+                        <a id="logo_aaamat_navbar" class="navbar-brand" href=./home
+                            style="display:flex;align-items:center">
+                            <img src="./img/aaamat.svg" alt="AAAMAT" title="Home" style="height: 20px">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                            aria-labelledby="offcanvasNavbarLabel" style="background-color: #A51515;border-left: none;">
+                            <div class="offcanvas-header">
+                                <img class="offcanvas-title" id="offcanvasNavbarLabel" src="./img/aaamat.svg"
+                                    width="35%">
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href=./home>Home</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href=./contato>Contato</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href=./historia>História</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href=./lojinha>Lojinha</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href=./eventos>Eventos</a>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="nav-item dropdown center">
+                                        <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown"
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Esportivo
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown"
+                                            style="background-color: #A51515">
+                                            <li><a class="nav-link active" href=./modalidades>Modalidades</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a class="nav-link active" href=./campeonatos>Campeonatos</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown"
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Gestão
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown"
+                                            style="background-color: #A51515">
+                                            <li><a class="nav-link active" href=./quem_somos>Quem
+                                                    somos</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a class="nav-link active" href=./como_participar>Faça
+                                                    parte</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                </ul>
+                                <div
+                                    style="display: flex;flex-direction: row;justify-content: center;align-items: center;margin:50px">
+                                    <a href="https://www.instagram.com/aaamat_imeusp/" target="_blank">
+                                        <img src="./img/instagram_vinho.svg" width="40px" style="margin: 10px;">
+                                    </a>
+                                    <a href="https://www.facebook.com/aaamat.ime/" target="_blank">
+                                        <img src="./img/facebook_vinho.svg" width="40px" style="margin: 10px;">
+                                    </a>
+                                    <a href="https://www.linkedin.com/company/aaamatimeusp/" target="_blank">
+                                        <img src="./img/linkedin_vinho.svg" width="40px" style="margin: 10px;">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+
+        </header>
+
+
+
+        <!-- AQUI FICARÁ O CONTEÚDO DA PÁGINA -->
+        <div class='b'>
+            <!-- BANNER CONTATO -->
+            <div style="padding:30px 0 30px 0 ; ">
+                <h1 class="container"
+                    style="font-weight: bold;text-align: center;font-variant: small-caps; margin-top:0px">CONTATO
+                </h1>
+                <div class="d-flex justify-content-center" style="margin: 5px 0 10px 0;">
+                    <div style="height:7px;background-color:#A51515;width: 100px;"></div>
+                </div>
+            </div>
+
+
+            <div id="div-mae" class="container" style="display: flex;flex-direction:row;padding-bottom: 30px;">
+                <!-- Contate-nos e Redes -->
+                <div id="div-contate-e-redes"
+                    style="height: 100%;width: 60%;border-right: 2px dotted rgb(29,29,29,0.7);">
+                    <!-- Contate-nos -->
+                    <div>
+                        <h3 class="container"
+                            style="font-weight:bold;font-variant: small-caps; margin-top:0px; border-left: 7px solid #A51515;">
+                            CONTATE-NOS
+                        </h3>
+                        <div class="container">
+                            <div style="display:flex;flex-direction:row; margin-bottom:20px;">
+                                <div style="margin-right:5px">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor"
+                                        class="bi bi-send-fill" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89.471-1.178-1.178.471L5.93 9.363l.338.215a.5.5 0 0 1 .154.154l.215.338 7.494-7.494Z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    Mensagem direta para o contato pessoal do(a) presidente da gestão
+                                    vigente, que
+                                    pode ser encontrado na página
+                                    <a href="./quem_somos"
+                                        style="text-decoration: underline;color:currentColor; font-weight: 700; ">GESTÃO</a>
+                                </div>
+                            </div>
+                            <a href="mailto:aaamat.presidente@gmail.com" target="_blank"
+                                style="display:flex;flex-direction:row; margin-bottom:20px;text-decoration: none;color:currentColor;width: fit-content;">
+                                <div style="margin-right:5px">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor"
+                                        class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" />
+                                    </svg>
+                                </div>
+                                <div style="word-break: break-all;">
+                                    aaamat.presidente@gmail.com
+                                </div>
+                            </a>
+                            <a href="https://www.facebook.com/aaamat.ime/" target="_blank"
+                                style="display:flex;flex-direction:row; margin-bottom:20px;text-decoration: none;color:currentColor;width: fit-content;">
+                                <div style="margin-right:5px">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor"
+                                        class="bi bi-messenger" viewBox="0 0 16 16">
+                                        <path
+                                            d="M0 7.76C0 3.301 3.493 0 8 0s8 3.301 8 7.76-3.493 7.76-8 7.76c-.81 0-1.586-.107-2.316-.307a.639.639 0 0 0-.427.03l-1.588.702a.64.64 0 0 1-.898-.566l-.044-1.423a.639.639 0 0 0-.215-.456C.956 12.108 0 10.092 0 7.76zm5.546-1.459-2.35 3.728c-.225.358.214.761.551.506l2.525-1.916a.48.48 0 0 1 .578-.002l1.869 1.402a1.2 1.2 0 0 0 1.735-.32l2.35-3.728c.226-.358-.214-.761-.551-.506L9.728 7.381a.48.48 0 0 1-.578.002L7.281 5.98a1.2 1.2 0 0 0-1.735.32z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    Página Associação Atlética Acadêmica da Matemática (AAAMAT)
+                                    no Messenger
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Redes sociais -->
+                    <div class="container"
+                        style="display: flex;flex-direction: column;height: 100%;width: fit-content;margin-top:30px;margin-bottom: 30px;">
+                        <div id="insta-aaamat-contato"
+                            style="display: flex;flex-direction: row; justify-content: space-between;background-color: whitesmoke;width: 100%;padding:20px;height: 170px;align-items: center;border-radius: 10px 10px 0 0;">
+                            <a id="icon-insta-aaamat-contato" href="https://www.instagram.com/aaamat_imeusp/"
+                                target="_blank"
+                                style="justify-content: center;align-items: center;display: flex;flex-direction: column;flex-grow: 1; padding:20px;text-decoration: none;">
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" fill="#3A000E"
+                                        style="margin-bottom: 5px;" class="bi bi-instagram" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                                    </svg>
+                                </div>
+                                <div style="word-break: break-all;color: #3A000E;font-weight: 600;">
+                                    @aaamat_imeusp
+                                </div>
+                            </a>
+                            <iframe id="iframe-insta-aaamat-contato" width="340" height="54"
+                                style="box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.438);border-radius: 10px"
+                                src="https://www.instagram.com/p/CEHr1AfBCs6/embed" frameborder="0"></iframe>
+                        </div>
+
+                        <div id="face-aaamat-contato"
+                            style="display: flex;flex-direction: row; justify-content: space-between;background-color: #3A000E;width: 100%;padding:20px;height: 170px;align-items: center;border-radius: 0 0 10px 10px;">
+                            <a id="icon-face-aaamat-contato" href="https://www.facebook.com/aaamat.ime/" target="_blank"
+                                style="justify-content: center;align-items: center;display: flex;flex-direction: column;flex-grow: 1; padding:20px;text-decoration: none;">
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" fill="white"
+                                        style="margin-bottom: 5px;" class="bi bi-facebook" viewBox="0 0 16 16">
+                                        <path
+                                            d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                                    </svg>
+                                </div>
+                                <div style="word-break: break-all;color: white;font-weight: 600;">
+                                    /aaamat.ime
+                                </div>
+                            </a>
+                            <iframe id="iframe-face-aaamat-contato"
+                                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Faaamat.ime&tabs=mensagens&width=340&height=130&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
+                                width="340" height="130"
+                                style="border:none;overflow:hidden;box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.438);border-radius: 10px"
+                                scrolling="no" frameborder="0" allowfullscreen="true"
+                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- onde Estamos -->
+                <div id="div-onde-estamos" style="height: 100%;width: 40%;padding-left: 20px;">
+                    <div style="display: flex;flex-direction: column;height: max-content;">
+                        <h3 class="container"
+                            style="font-weight:bold;font-variant: small-caps; margin-top:0; border-left: 7px solid #A51515;">
+                            ONDE ESTAMOS
+                        </h3>
+                        <div class="container" style="display:flex;flex-direction:row; margin-bottom:20px">
+                            <div style="margin-right:5px">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor"
+                                    class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                                </svg>
+
+                            </div>
+                            <div>
+                                Rua do Matão, 1010<br>
+                                IME, Bloco B, Sala B08<br>
+                                Butantã - São Paulo - SP
+                            </div>
+                        </div>
+
+                        <!-- Mapa com Foto da Vivencia -->
+                        <div class="container" style="width:100%;height:100%;position: relative;">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14629.00335548387!2d-46.739672492126466!3d-23.559432923669824!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x81bb971c3a8f0fcf!2sIME%20-%20Instituto%20de%20Matem%C3%A1tica%20e%20Estat%C3%ADstica%20da%20Universidade%20de%20S%C3%A3o%20Paulo!5e0!3m2!1spt-BR!2sbr!4v1640382415529!5m2!1spt-BR!2sbr"
+                                width="100%" style="border:0;min-height: 350px;" allowfullscreen=""
+                                loading="lazy"></iframe>
+                            <div style="width:50%;position: absolute;bottom: -10px;right:-10px">
+                                <img src="./img/sala_vivencia2.jpg" width="100%"
+                                    style="transform:rotate(-1deg);border: 5px solid white; box-shadow: 2px 2px 10px 2px black">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- RODAPÉ -->
+        <footer>
+            <div id="general_infos">
+                <div id="logo-imeusp">
+                    <a href="https://www.ime.usp.br/" target="_blank" title="IME-USP Home" alt="IME-USP Logo">
+                        <img id="img_logo-imeusp" src="./img/ime_usp.svg" style="height: 90px;">
+                    </a>
+                </div>
+
+                <div id="nome_localizacao"
+                    style="max-height: 90px;overflow-x: scroll; padding: 5px 5px 5px 10px;flex-grow: 2;">
+                    <p id="nome_social_aaamat" style="font-weight:700; background-color: transparent;color: #0a0a0a;margin: 5px 0 4px 0; font-size: 14px;text-align: center;line-height: 15px;
+                        ">
+                        Associação
+                        Atlética
+                        Acadêmica da
+                        Matemática (AAAMAT)</p>
+                    <p id="nome_ime"
+                        style="font-weight:600; background-color: transparent;color: #0a0a0a; font-size: 14px; line-height: 15px;text-align: center;margin-bottom: 10px;">
+                        Instituto
+                        de
+                        Matemática e
+                        Estatística - USP</p>
+                    <hr id="divisor_nome_localizacao"
+                        style="height:2px;width:100% ;border-width:0;color:rgb(61, 61, 61);background-color:rgb(61, 61, 61); opacity: 10%;margin: 0 0 2px 0;">
+
+                    <div
+                        style="background-color: transparent;display:flex;justify-content: center;vertical-align: middle;font-size: 13px;">
+
+                        <div id="localizacao_rodape"
+                            style="background-color: transparent;justify-content: center;vertical-align: middle;font-size: 13px;">
+
+                            <img id="icon_local" src="./img/geo-alt.svg"
+                                style="background-color: transparent;height: 14px;width: 14px;margin: 0px 2px 0 0;">
+                            <p id="asaada"
+                                style="display: inline-block;font-weight: 400; margin: 2px 2px 0 0; background-color: transparent; color: #0a0a0a;">
+                                Localização: </p>
+                            <p
+                                style="display: inline-block;font-weight: 300; margin: 2px 0 0 0; background-color: transparent; color: #0a0a0a">
+                                Rua do Matão, 1010 — Butantã, São
+                                Paulo
+                                - SP, 05508-120</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="redes-sociais"
+                    style="display: flex; flex-direction: row; justify-content: space-between;padding: 0px;">
+                    <a href="https://www.instagram.com/aaamat_imeusp/" target="_blank"
+                        style="background-color: transparent;">
+                        <img id="insta_logo" src="./img/instagram.svg"
+                            style="height: 35px;margin: 15px 5px 5px 5px;background-color: transparent;">
+                    </a>
+                    <a href="https://www.facebook.com/aaamat.ime/" target="_blank"
+                        style="background-color: transparent;">
+                        <img id="face_logo" src="./img/facebook.svg"
+                            style="height: 35px;margin: 15px 5px 5px 5px;background-color: transparent;">
+                    </a>
+                    <a href="https://www.linkedin.com/company/aaamatimeusp/" target="_blank"
+                        style="background-color: transparent;">
+                        <img id="linkedin_logo" src="./img/linkedin.svg"
+                            style="height: 35px;margin: 15px 10px 5px 5px;background-color: transparent;">
+                    </a>
+                </div>
+            </div>
+
+            <div class='c' style="font-size: 12px;">
+                &copy;
+                <script type="text/javascript">document.write(new Date().getFullYear());</script> Atlética
+                Matemática
+                USP
+            </div>
+            <div class="c" style="margin: 0;padding: 0;">
+                <hr
+                    style="height:0.5px;width:100% ;border-width:0;color:rgb(61, 61, 61);background-color:rgb(61, 61, 61); opacity: 10%;margin: 0;">
+                <p
+                    style="box-shadow:0 0 5px 2px #0a0a0a;background-color: #0c0c0c;font-weight: 300 italic; color: rgb(61, 61, 61); text-align: right; padding-right: 0.5%; font-size: 8px; margin:0;opacity: 30%">
+                    Site e Design criados por Bruno Groper Morbin & Luiz Carlos</p>
+            </div>
+
+        </footer>
+    </div>
+</body>
+
+</html>
+
+
+<style>
+    @media (max-width: 1050px) {
+        /* #insta-aaamat-contato {
+            flex-direction: column !important;
+            height: 300px !important;
+        }
+
+        #face-aaamat-contato {
+            flex-direction: column !important;
+            height: 300px !important;
+        } */
+
+        #icon-face-aaamat-contato {
+            display: none !important;
+        }
+
+        #icon-insta-aaamat-contato {
+            display: none !important;
+        }
+    }
+
+    @media (max-width: 780px) {
+
+
+        #div-mae {
+            flex-direction: column !important;
+        }
+
+        #div-contate-e-redes {
+            border-right: none !important;
+            width: 100% !important;
+        }
+
+        #div-onde-estamos {
+            width: 100% !important;
+            padding-left: 0 !important;
+            padding-bottom: 30px !important;
+        }
+
+    }
+
+    @media(max-width:480px) {
+        #insta-aaamat-contato {
+            flex-direction: column !important;
+            height: min-content !important;
+            padding: 10px !important;
+        }
+
+        #face-aaamat-contato {
+            flex-direction: column !important;
+            height: min-content !important;
+            padding: 10px !important;
+        }
+
+        #iframe-face-aaamat-contato {
+            display: none !important;
+        }
+
+        #iframe-insta-aaamat-contato {
+            display: none !important;
+        }
+
+        #icon-face-aaamat-contato {
+            display: flex !important;
+        }
+
+        #icon-insta-aaamat-contato {
+            display: flex !important;
+        }
+    }
+</style>
