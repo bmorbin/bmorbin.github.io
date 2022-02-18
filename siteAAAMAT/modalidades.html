@@ -331,7 +331,7 @@
                     TABELA DE
                     TREINOS:</h3>
 
-                <div id="carregando_tabela" class="d-flex justify-content-center" style="margin-top: 20px;">
+                <div id="carregando_tabela" class="d-flex justify-content-center" style="margin-top: 20px">
                     <!-- <div class="spinner-grow text-light" style="width: 3rem; height: 3rem;" role="status">
                         <span class="visually-hidden">Loading...</span>
                     </div> -->
@@ -340,7 +340,7 @@
                     </div>
                 </div>
 
-                <div id="tabela" class="table-responsive-xxl">
+                <div id="tabela" style="overflow-y:scroll;height: 80vh;position: relative;margin-bottom: 20px;">
                 </div>
             </div>
 
@@ -467,6 +467,8 @@
 
     .table-dark {
         --bs-table-hover-bg: black;
+        --bs-table-bg: #29292947;
+        --bs-table-striped-bg: #52525242;
     }
 
     .dropdown-menu.dropdown-menu-dark.show {
@@ -499,7 +501,7 @@
             const tabela = document.createElement('table');
             tabela.className = "table table-dark align-middle table-hover table-striped table-bordered";
             tabela.innerHTML = `
-            <thead class="align-middle" style="text-align: center;">
+            <thead class="align-middle" style="text-align: center;position: sticky; top:0; background-color: #A51515">
                             <tr style="white-space:nowrap">
                                 <th scope="col">Modalidade</th>
                                 <th scope="col">Segunda-feira</th>
